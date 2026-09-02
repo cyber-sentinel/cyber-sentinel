@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  <strong>Cyber Defense Architecture • SOC & THIR • Detection Engineering & Cyber Deception • DFIR • AppSec • DevSecOps • AI Security</strong>
+  <strong>Cyber Defense Architecture • SOC & THIR • Detection Engineering • Cyber Deception • EDR/XDR • DFIR • AppSec • DevSecOps • AI Security</strong>
 </p>
 
 <p align="center">
@@ -19,7 +19,7 @@
 
 ## About
 
-I am a cybersecurity professional focused on designing and operating modern cyber defense capabilities across SOC, Threat Hunting, Incident Response, DFIR, Detection Engineering & Cyber Deception, Security Architecture, AppSec, DevSecOps, and AI-assisted security operations.
+I am a cybersecurity professional focused on designing and operating modern cyber defense capabilities across SOC, Threat Hunting, Incident Response, DFIR, Detection Engineering, Cyber Deception, EDR/XDR, Security Architecture, AppSec, DevSecOps, and AI-assisted security operations.
 
 My work spans both hands-on engineering and security leadership: from telemetry design, detection logic, threat hunting, incident response, and security tooling to operating models, technical governance, architecture, and continuous security improvement.
 
@@ -32,6 +32,8 @@ I am especially interested in building security programs that are measurable, au
 - **SOC Architecture & Operations** — SIEM engineering, telemetry strategy, use-case lifecycle, tuning, triage, escalation, and SOC operating models
 - **Threat Hunting & Intelligence** — hypothesis-driven hunting, ATT&CK mapping, CTI enrichment, IOC/TTP analysis, and hunt development
 - **Detection Engineering** — Sigma, Splunk SPL, KQL, YARA, behavioral analytics, detection-as-code, validation, and false-positive reduction
+- **Cyber Deception & Active Defense** — deception architecture, decoys, lures, breadcrumbs, canary assets, adversary engagement, and deception-driven detection
+- **Endpoint Detection & Response (EDR/XDR)** — endpoint telemetry, behavioral detection, investigation, containment, response workflows, and detection tuning
 - **Incident Response & THIR** — containment, eradication, root-cause analysis, playbooks, evidence handling, and post-incident improvement
 - **Digital Forensics** — Windows/Linux artifacts, memory and disk analysis concepts, timelines, persistence, and attacker tradecraft
 - **Security Architecture** — defense-in-depth, segmentation, IAM/PAM, WAF, endpoint, network security, logging, and secure design reviews
@@ -46,7 +48,10 @@ I am especially interested in building security programs that are measurable, au
 `Splunk` `Wazuh` `MISP` `Sigma` `YARA` `Sysmon` `Zeek` `Suricata` `SOAR` `Threat Intelligence`
 
 ### Network & Security Platforms
-`FortiGate` `FortiWeb` `Palo Alto` `F5 BIG-IP` `Cisco` `EDR/XDR` `WAF` `PAM` `DLP`
+`FortiGate` `FortiWeb` `Palo Alto` `F5 BIG-IP` `Cisco` `WAF` `PAM` `DLP`
+
+### Endpoint, EDR/XDR & Deception
+`SentinelOne` `Kaspersky KATA / EDR` `ESET Inspect` `FortiDeceptor` `EDR/XDR` `Cyber Deception` `Canary / Decoy Technologies`
 
 ### Engineering & Automation
 `Python` `PowerShell` `Bash` `Git` `Docker` `Kubernetes` `REST APIs` `JSON` `YAML`
@@ -76,6 +81,8 @@ These repositories are being developed as a practical cybersecurity engineering 
 ## Current Focus
 
 - Detection-as-Code and detection validation
+- Cyber Deception and active-defense engineering
+- EDR/XDR telemetry, investigation, response, and tuning
 - Advanced Threat Hunting
 - SOC and THIR operating models
 - DFIR and incident-response engineering
@@ -101,7 +108,7 @@ These repositories are being developed as a practical cybersecurity engineering 
 
 This profile is being developed around six core pillars:
 
-`Detect` → `Hunt` → `Respond` → `Investigate` → `Engineer` → `Automate`
+`Detect` → `Deceive` → `Hunt` → `Respond` → `Investigate` → `Engineer` → `Automate`
 
 The long-term goal is to maintain a high-signal repository of practical cyber defense content, tools, detections, playbooks, labs, and security research.
 
