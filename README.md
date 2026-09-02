@@ -55,10 +55,10 @@ I focus on converting cyber risk into practical controls, operating models, dete
 `Splunk` `Wazuh` `MISP` `Sigma` `YARA` `Sysmon` `Zeek` `Suricata` `SOAR` `CTI`
 
 ### Endpoint Security, EDR/XDR & Advanced Detection
-`SentinelOne` `Kaspersky KATA / EDR` `ESET Inspect / EDR` `EDR` `XDR` `Endpoint Telemetry`
+`SentinelOne Singularity Endpoint` `Kaspersky KATA / KEDR` `ESET Inspect (EDR/XDR)` `EDR` `XDR` `Endpoint Telemetry`
 
 ### Cyber Deception & Active Defense
-`FortiDeceptor` `SentinelOne Deception` `Canary Technologies` `Decoys` `Lures` `Breadcrumbs`
+`FortiDeceptor` `SentinelOne Singularity Hologram` `Canary Technologies` `Decoys` `Lures` `Breadcrumbs`
 
 ### Network, Application & Access Security
 `FortiGate` `FortiWeb` `Palo Alto` `F5 BIG-IP` `Cisco` `WAF` `PAM` `DLP` `IAM`
