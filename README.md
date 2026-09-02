@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  Security Operations & SOC • Threat Hunting & Incident Response • Detection Engineering • DFIR • Cyber Deception • Security Architecture • AppSec & DevSecOps • AI Security & Automation
+  Security Operations & SOC • Threat Hunting & Incident Response (THIR) • Detection Engineering & Cyber Deception • Digital Forensics & Incident Response (DFIR) • Security Architecture • AppSec & DevSecOps • AI Security & Automation
 </p>
 
 ---
@@ -36,11 +36,9 @@ I focus on converting cyber risk into practical controls, operating models, dete
 
 ### Cyber Defense & Security Engineering
 - **Security Operations & SOC** — SIEM engineering, telemetry strategy, use-case lifecycle, tuning, triage, escalation, and security monitoring
-- **Threat Hunting & Incident Response** — hypothesis-driven hunting, ATT&CK mapping, containment, eradication, root-cause analysis, playbooks, and post-incident improvement
-- **Detection Engineering** — Sigma, Splunk SPL, KQL, YARA, behavioral analytics, detection-as-code, validation, and false-positive reduction
-- **Digital Forensics & DFIR** — Windows/Linux artifacts, memory and disk analysis concepts, timelines, persistence analysis, and attacker tradecraft
-- **Cyber Deception & Active Defense** — deception architecture, decoys, lures, breadcrumbs, canary assets, adversary engagement, and deception-driven detection
-- **Cyber Threat Intelligence** — IOC/TTP analysis, enrichment, intelligence operationalization, ATT&CK mapping, and CTI-to-detection workflows
+- **Threat Hunting & Incident Response (THIR)** — hypothesis-driven hunting, ATT&CK mapping, containment, eradication, root-cause analysis, playbooks, and post-incident improvement
+- **Detection Engineering & Cyber Deception** — detection-as-code, Sigma/SPL/KQL/YARA, behavioral analytics, validation, decoys, lures, breadcrumbs, canary assets, and deception-driven detection
+- **Digital Forensics & Incident Response (DFIR)** — Windows/Linux artifacts, memory and disk analysis concepts, timelines, persistence analysis, evidence handling, and forensic investigation workflows
 - **Security Architecture** — segmentation, IAM/PAM, endpoint and network security, WAF, logging architecture, resilient design, and security control integration
 - **Application Security & DevSecOps** — SSDLC, SAST/DAST/SCA, secrets management, CI/CD security gates, threat modeling, and secure release processes
 - **AI Security & Automation** — AI-assisted SOC workflows, security orchestration, enrichment, knowledge systems, LLM-security concepts, and automation
@@ -94,9 +92,9 @@ These repositories are being developed as a practical cybersecurity engineering 
 - Information Security Management and security-program maturity
 - SOC / THIR architecture, operating models, and measurable security operations
 - Detection-as-Code and detection validation
-- Advanced Threat Hunting and Incident Response
-- DFIR and investigation engineering
-- Cyber Deception and active-defense engineering
+- Threat Hunting & Incident Response (THIR)
+- Digital Forensics & Incident Response (DFIR)
+- Detection Engineering and Cyber Deception
 - CTI integration and intelligence-driven detection
 - AppSec / DevSecOps security engineering
 - AI-assisted security operations and automation
