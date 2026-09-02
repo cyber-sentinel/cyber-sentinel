@@ -37,7 +37,7 @@ I focus on converting cyber risk into practical controls, operating models, dete
 ### Cyber Defense Specializations
 - **Security Operations & SOC** — SIEM engineering, telemetry strategy, use-case lifecycle, tuning, triage, escalation, and security monitoring
 - **Threat Hunting & Incident Response (THIR)** — hypothesis-driven hunting, ATT&CK mapping, containment, eradication, root-cause analysis, playbooks, and post-incident improvement
-- **Detection Engineering & Cyber Deception** — detection-as-code, Sigma/SPL/KQL/YARA, behavioral analytics, validation, decoys, lures, breadcrumbs, canary assets, and deception-driven detection
+- **Detection Engineering & Cyber Deception** — detection-as-code, Sigma, Splunk SPL, Microsoft Kusto Query Language (KQL), Elastic Kibana Query Language (KQL), Elastic EQL/ES|QL, YARA, Suricata, behavioral analytics, validation, decoys, lures, breadcrumbs, canary assets, and deception-driven detection
 - **Digital Forensics & Incident Response (DFIR)** — Windows/Linux artifacts, memory and disk analysis concepts, timelines, persistence analysis, evidence handling, and forensic investigation workflows
 - **Security Architecture** — segmentation, IAM/PAM, endpoint and network security, WAF, logging architecture, resilient design, and security control integration
 - **AppSec & DevSecOps** — SSDLC, SAST/DAST/SCA, secrets management, CI/CD security gates, threat modeling, and secure release processes
@@ -76,7 +76,7 @@ These repositories are being developed as a practical cybersecurity engineering 
 | Project | Focus |
 |---|---|
 | **[Cyber-Sentinel-Forge](https://github.com/cyber-sentinel/Cyber-Sentinel-Forge)** | Flagship cyber defense engineering lab and reusable security tooling |
-| **detection-engineering-lab** | Sigma, Splunk, KQL, detection logic, validation, and tuning |
+| **detection-engineering-lab** | Sigma, Splunk SPL, Microsoft KQL, Elastic KQL/EQL/ES|QL, detection logic, validation, and tuning |
 | **cyber-deception-lab** | Deception architectures, decoys, lures, active-defense patterns, and deception-driven detections |
 | **threat-hunting-lab** | Threat hunting scenarios, hypotheses, queries, and ATT&CK mappings |
 | **soc-playbooks** | SOC runbooks, incident-response procedures, triage flows, and escalation models |
