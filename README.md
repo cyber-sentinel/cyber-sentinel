@@ -4,7 +4,7 @@
 -->
 
 <p align="center">
-  <img src="./assets/cyber-sentinel-banner.svg" alt="Cyber-Sentinel — Ali RahimDabagh" width="100%" />
+  <img src="./assets/cyber-sentinel-banner.png" alt="Cyber-Sentinel — Ali RahimDabagh" width="100%" />
 </p>
 
 <p align="center">
