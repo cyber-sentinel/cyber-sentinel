@@ -33,13 +33,15 @@
   </g>
 
   <!-- title -->
-  <text x="305" y="112" fill="#f2f7fa" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="62" font-weight="800" letter-spacing="4">CYBER-SENTINEL</text>
-  <rect x="307" y="134" width="840" height="3" rx="2" fill="url(#cyan)" opacity=".9"/>
-  <text x="307" y="174" fill="#86edf0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="27" font-weight="700" letter-spacing="1.5">ALI RAHIMDABAGH</text>
-  <text x="307" y="232" fill="#c7d5dc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" font-weight="500">Cyber Defense Architect  •  SOC &amp; THIR  •  Detection Engineering  •  Cyber Deception</text>\n  <text x="307" y="260" fill="#9fb4be" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="500">EDR/XDR  •  DFIR  •  AppSec / DevSecOps  •  AI Security</text>
+  <text x="305" y="108" fill="#f2f7fa" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="61" font-weight="800" letter-spacing="4">CYBER-SENTINEL</text>
+  <rect x="307" y="130" width="840" height="3" rx="2" fill="url(#cyan)" opacity=".9"/>
+  <text x="307" y="168" fill="#86edf0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="27" font-weight="700" letter-spacing="1.5">ALI RAHIMDABAGH</text>
+  <text x="307" y="207" fill="#eef7f9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" font-weight="650">Information Security Manager  •  Cyber Defense Architect</text>
+  <text x="307" y="244" fill="#c7d5dc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="500">Security Operations &amp; SOC  •  Threat Hunting &amp; Incident Response  •  Detection Engineering  •  DFIR</text>
+  <text x="307" y="271" fill="#9fb4be" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="500">Cyber Deception  •  Security Architecture  •  AppSec &amp; DevSecOps  •  AI Security &amp; Automation</text>
 
   <!-- terminal tag -->
-  <g transform="translate(307 298)">
+  <g transform="translate(307 296)">
     <rect width="675" height="42" rx="8" fill="#071217" stroke="#1b5661" stroke-width="1.5"/>
     <text x="18" y="27" fill="#27e4d6" font-family="Consolas,Menlo,monospace" font-size="18">root@sentinel:~$ detect → defend → respond → evolve</text>
   </g>
