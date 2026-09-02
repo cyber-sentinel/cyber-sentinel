@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  <strong>Cyber Defense Architecture • SOC & THIR • Detection Engineering • DFIR • AppSec • DevSecOps • AI Security</strong>
+  <strong>Cyber Defense Architecture • SOC & THIR • Detection Engineering & Cyber Deception • DFIR • AppSec • DevSecOps • AI Security</strong>
 </p>
 
 <p align="center">
@@ -19,7 +19,7 @@
 
 ## About
 
-I am a cybersecurity professional focused on designing and operating modern cyber defense capabilities across SOC, Threat Hunting, Incident Response, DFIR, Detection Engineering, Security Architecture, AppSec, DevSecOps, and AI-assisted security operations.
+I am a cybersecurity professional focused on designing and operating modern cyber defense capabilities across SOC, Threat Hunting, Incident Response, DFIR, Detection Engineering & Cyber Deception, Security Architecture, AppSec, DevSecOps, and AI-assisted security operations.
 
 My work spans both hands-on engineering and security leadership: from telemetry design, detection logic, threat hunting, incident response, and security tooling to operating models, technical governance, architecture, and continuous security improvement.
 
