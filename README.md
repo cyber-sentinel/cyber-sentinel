@@ -21,7 +21,7 @@
 
 I am an **Information Security Manager and Cyber Defense Architect** with 15+ years of experience across cybersecurity engineering, security operations, incident response, threat hunting, digital forensics, security architecture, and security leadership.
 
-My work combines **management, architecture, and hands-on engineering**. I design and mature security programs, build and operate SOC/THIR capabilities, lead incident-response and threat-hunting activities, engineer detections, develop cyber-deception strategies, and integrate defensive technologies into measurable security operations.
+My work combines **information security management, cyber defense architecture, and hands-on security engineering**. I design and mature security programs, build and operate SOC/THIR capabilities, lead incident-response and threat-hunting activities, engineer detections, develop cyber-deception strategies, and integrate defensive technologies into measurable security operations.
 
 I focus on converting cyber risk into practical controls, operating models, detection logic, response procedures, and engineering roadmaps that remain effective in real production environments.
 
@@ -34,13 +34,13 @@ I focus on converting cyber risk into practical controls, operating models, dete
 - **SOC & THIR Leadership** — SOC operating models, team structure, escalation paths, incident governance, threat-hunting programs, and continuous operational improvement
 - **Security Architecture & Engineering Leadership** — architecture reviews, defense-in-depth, control selection, technology evaluation, and production-aware security design
 
-### Cyber Defense & Security Engineering
+### Cyber Defense Specializations
 - **Security Operations & SOC** — SIEM engineering, telemetry strategy, use-case lifecycle, tuning, triage, escalation, and security monitoring
 - **Threat Hunting & Incident Response (THIR)** — hypothesis-driven hunting, ATT&CK mapping, containment, eradication, root-cause analysis, playbooks, and post-incident improvement
 - **Detection Engineering & Cyber Deception** — detection-as-code, Sigma/SPL/KQL/YARA, behavioral analytics, validation, decoys, lures, breadcrumbs, canary assets, and deception-driven detection
 - **Digital Forensics & Incident Response (DFIR)** — Windows/Linux artifacts, memory and disk analysis concepts, timelines, persistence analysis, evidence handling, and forensic investigation workflows
 - **Security Architecture** — segmentation, IAM/PAM, endpoint and network security, WAF, logging architecture, resilient design, and security control integration
-- **Application Security & DevSecOps** — SSDLC, SAST/DAST/SCA, secrets management, CI/CD security gates, threat modeling, and secure release processes
+- **AppSec & DevSecOps** — SSDLC, SAST/DAST/SCA, secrets management, CI/CD security gates, threat modeling, and secure release processes
 - **AI Security & Automation** — AI-assisted SOC workflows, security orchestration, enrichment, knowledge systems, LLM-security concepts, and automation
 
 ---
@@ -128,5 +128,5 @@ The long-term goal is to maintain a high-signal repository of practical cyber de
 </p>
 
 <p align="center">
-  <sub>Cyber-Sentinel • Cyber Defense Engineering Portfolio</sub>
+  <sub>Cyber-Sentinel • Security Leadership & Cyber Defense Engineering Portfolio</sub>
 </p>
