@@ -69,6 +69,7 @@ These repositories are being developed as a practical cybersecurity engineering 
 |---|---|
 | **sentinel-forge** | Flagship cyber defense engineering lab and reusable security tooling |
 | **detection-engineering-lab** | Sigma, Splunk, KQL, detection logic, validation, and tuning |
+| **cyber-deception-lab** | Deception architectures, decoys, lures, active-defense patterns, and deception-driven detections |
 | **threat-hunting-lab** | Threat hunting scenarios, hypotheses, queries, and ATT&CK mappings |
 | **soc-playbooks** | SOC runbooks, incident-response procedures, triage flows, and escalation models |
 | **dfir-fieldbook** | DFIR references, artifacts, investigation notes, and field procedures |
