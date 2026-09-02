@@ -1,58 +1,89 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="360" viewBox="0 0 1400 360">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="500" viewBox="0 0 1600 500">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#060a0f"/>
-      <stop offset="55%" stop-color="#0a1219"/>
-      <stop offset="100%" stop-color="#071017"/>
+      <stop offset="0%" stop-color="#03070b"/>
+      <stop offset="50%" stop-color="#071116"/>
+      <stop offset="100%" stop-color="#020609"/>
     </linearGradient>
     <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#20e3d2"/>
-      <stop offset="100%" stop-color="#43a8ff"/>
+      <stop offset="0%" stop-color="#30f2e6"/>
+      <stop offset="100%" stop-color="#2b8cff"/>
     </linearGradient>
-    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="4" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#1f8c96" stroke-width="0.7" opacity=".13"/>
+    </pattern>
   </defs>
 
-  <rect width="1400" height="360" rx="24" fill="url(#bg)"/>
-  <rect x="1.5" y="1.5" width="1397" height="357" rx="22.5" fill="none" stroke="#173341" stroke-width="3"/>
+  <rect width="1600" height="500" rx="26" fill="url(#bg)"/>
+  <rect x="2" y="2" width="1596" height="496" rx="24" fill="none" stroke="#173944" stroke-width="3"/>
+  <rect width="1600" height="500" fill="url(#grid)"/>
 
-  <!-- subtle grid -->
-  <g opacity=".12" stroke="#37d9d0" stroke-width="1">
-    <path d="M0 70H1400M0 140H1400M0 210H1400M0 280H1400"/>
-    <path d="M100 0V360M200 0V360M300 0V360M400 0V360M500 0V360M600 0V360M700 0V360M800 0V360M900 0V360M1000 0V360M1100 0V360M1200 0V360M1300 0V360"/>
+  <!-- Tactical framing -->
+  <g stroke="#2ed8d2" fill="none" opacity=".75">
+    <path d="M18 58V18H115M1485 18h97v40M18 442v40h97M1485 482h97v-40" stroke-width="3"/>
+    <path d="M495 62h560M495 438h560" stroke-width="1.5" stroke-dasharray="10 10"/>
   </g>
 
-  <!-- left shield -->
-  <g transform="translate(72 70)" filter="url(#glow)">
-    <path d="M95 0L172 31V92c0 69-40 114-77 136C58 206 18 161 18 92V31L95 0z" fill="#07171c" stroke="url(#cyan)" stroke-width="5"/>
-    <path d="M95 25L145 45v47c0 48-25 81-50 99-25-18-50-51-50-99V45l50-20z" fill="none" stroke="#2fd7d4" stroke-width="2.5" opacity=".9"/>
-    <path d="M95 56l22 34-22 14-22-14 22-34zm0 48v58" stroke="#43d9e6" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-    <circle cx="95" cy="95" r="82" fill="none" stroke="#2bd3cf" stroke-width="1.5" stroke-dasharray="7 9" opacity=".35"/>
+  <!-- Shield / command insignia -->
+  <g transform="translate(65 84)" filter="url(#glow)">
+    <circle cx="150" cy="150" r="142" fill="none" stroke="#1fbec7" stroke-width="2" opacity=".35"/>
+    <circle cx="150" cy="150" r="118" fill="none" stroke="#1fbec7" stroke-width="1.5" stroke-dasharray="8 9" opacity=".35"/>
+    <path d="M150 25L255 66v88c0 91-55 151-105 184C100 305 45 245 45 154V66L150 25z" fill="#06151a" stroke="url(#cyan)" stroke-width="6"/>
+    <path d="M150 56l67 27v67c0 63-35 106-67 131-32-25-67-68-67-131V83l67-27z" fill="none" stroke="#29d8d6" stroke-width="2.5"/>
+    <path d="M150 84l28 42-28 18-28-18 28-42zm0 61v85" fill="none" stroke="#51f5ef" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M103 178l47 30 47-30" fill="none" stroke="#2ba9d6" stroke-width="4"/>
+    <circle cx="150" cy="150" r="92" fill="none" stroke="#35e0d8" stroke-width="1" opacity=".18"/>
   </g>
 
-  <!-- title -->
-  <text x="305" y="108" fill="#f2f7fa" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="61" font-weight="800" letter-spacing="4">CYBER-SENTINEL</text>
-  <rect x="307" y="130" width="840" height="3" rx="2" fill="url(#cyan)" opacity=".9"/>
-  <text x="307" y="168" fill="#86edf0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="27" font-weight="700" letter-spacing="1.5">ALI RAHIMDABAGH</text>
-  <text x="307" y="207" fill="#eef7f9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" font-weight="650">Information Security Manager  •  Cyber Defense Architect</text>
-  <text x="307" y="244" fill="#c7d5dc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="500">Security Operations &amp; SOC  •  Threat Hunting &amp; Incident Response  •  Detection Engineering  •  DFIR</text>
-  <text x="307" y="271" fill="#9fb4be" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="500">Cyber Deception  •  Security Architecture  •  AppSec &amp; DevSecOps  •  AI Security &amp; Automation</text>
+  <!-- Identity -->
+  <text x="390" y="88" fill="#eef7fa" font-family="Segoe UI,Arial,sans-serif" font-size="64" font-weight="800" letter-spacing="5">CYBER-SENTINEL</text>
+  <rect x="392" y="110" width="720" height="3" rx="2" fill="url(#cyan)"/>
+  <text x="392" y="155" fill="#63eae8" font-family="Segoe UI,Arial,sans-serif" font-size="28" font-weight="700" letter-spacing="4">ALI RAHIMDABAGH</text>
+  <text x="392" y="194" fill="#f4f8fa" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="650">Information Security Manager  •  Cyber Defense Architect</text>
 
-  <!-- terminal tag -->
-  <g transform="translate(307 296)">
-    <rect width="675" height="42" rx="8" fill="#071217" stroke="#1b5661" stroke-width="1.5"/>
-    <text x="18" y="27" fill="#27e4d6" font-family="Consolas,Menlo,monospace" font-size="18">root@sentinel:~$ detect → defend → respond → evolve</text>
+  <!-- Domains -->
+  <g font-family="Segoe UI,Arial,sans-serif" font-size="18" fill="#cbd9df">
+    <text x="420" y="244">Security Operations &amp; SOC</text>
+    <text x="420" y="279">Threat Hunting &amp; Incident Response (THIR)</text>
+    <text x="420" y="314">Detection Engineering &amp; Cyber Deception</text>
+    <text x="420" y="349">Digital Forensics &amp; Incident Response (DFIR)</text>
+    <text x="870" y="244">Security Architecture</text>
+    <text x="870" y="279">AppSec &amp; DevSecOps</text>
+    <text x="870" y="314">AI Security &amp; Automation</text>
   </g>
 
-  <!-- right radar -->
-  <g transform="translate(1210 175)" opacity=".55">
-    <circle r="105" fill="none" stroke="#2bd3cf" stroke-width="1.4"/>
-    <circle r="72" fill="none" stroke="#2bd3cf" stroke-width="1"/>
-    <circle r="38" fill="none" stroke="#2bd3cf" stroke-width="1"/>
-    <path d="M-105 0H105M0-105V105M0 0L82-64" stroke="#2bd3cf" stroke-width="1"/>
-    <circle cx="58" cy="-44" r="5" fill="#73fff8"/>
-    <circle cx="-49" cy="39" r="3.5" fill="#73fff8"/>
+  <!-- Domain markers -->
+  <g stroke="#34e5dd" fill="none" stroke-width="2">
+    <circle cx="395" cy="238" r="7"/><path d="M392 238h6M395 235v6"/>
+    <circle cx="395" cy="273" r="7"/><path d="M390 273h10"/>
+    <circle cx="395" cy="308" r="7"/><circle cx="395" cy="308" r="2" fill="#34e5dd"/>
+    <circle cx="395" cy="343" r="7"/><path d="M391 347c2-8 6-8 8 0"/>
+    <rect x="843" y="229" width="14" height="14" rx="2"/>
+    <path d="M844 266h13l-6 12z"/>
+    <circle cx="850" cy="308" r="8"/><path d="M850 300v16M842 308h16"/>
+  </g>
+
+  <!-- Intel / radar panel -->
+  <g transform="translate(1288 250)">
+    <circle r="150" fill="none" stroke="#1fcfd0" stroke-width="1.5" opacity=".5"/>
+    <circle r="112" fill="none" stroke="#1fcfd0" stroke-width="1" opacity=".4"/>
+    <circle r="74" fill="none" stroke="#1fcfd0" stroke-width="1" opacity=".35"/>
+    <circle r="36" fill="none" stroke="#1fcfd0" stroke-width="1" opacity=".35"/>
+    <path d="M-150 0H150M0-150V150M0 0L123-63" stroke="#29d9d5" stroke-width="1" opacity=".45"/>
+    <path d="M0 0L138-38" stroke="#62fff7" stroke-width="3" filter="url(#glow)"/>
+    <circle cx="94" cy="-26" r="5" fill="#6efff8"/>
+    <circle cx="-78" cy="61" r="4" fill="#35d8d4"/>
+    <circle cx="42" cy="87" r="3.5" fill="#35d8d4"/>
+    <text x="-106" y="-173" fill="#4fdedb" font-family="Consolas,monospace" font-size="13">INTEL // DEFENSE GRID</text>
+  </g>
+
+  <!-- Operational footer -->
+  <g transform="translate(392 393)">
+    <rect width="695" height="50" rx="8" fill="#061015" stroke="#175561" stroke-width="1.4"/>
+    <text x="24" y="31" fill="#3be8df" font-family="Consolas,monospace" font-size="18">DETECT  →  DECEIVE  →  HUNT  →  RESPOND  →  INVESTIGATE  →  EVOLVE</text>
   </g>
 </svg>
