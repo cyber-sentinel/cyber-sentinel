@@ -75,7 +75,7 @@ The portfolio is being consolidated around a small number of high-signal, produc
 
 | Project | Role |
 |---|---|
-| **[Cyber-Sentinel-DefenseOps](https://github.com/cyber-sentinel/Cyber-Sentinel-Forge)** | Open cyber defense operations engineering core: multi-engine detections, threat hunts, validation, DFIR/IR, deception, automation, and reproducible defensive content |
+| **[Cyber-Sentinel-DefenseOps](https://github.com/cyber-sentinel/Cyber-Sentinel-DefenseOps)** | Open cyber defense operations engineering core: multi-engine detections, threat hunts, validation, DFIR/IR, deception, automation, and reproducible defensive content |
 | **Cyber-Sentinel-Atlas** *(planned signature project)* | International cyber defense intelligence and analyst platform: fast search, knowledge graph, Windows/Sysmon/Linux/cloud/container references, detection/hunt/DFIR guidance, offline access, API, CLI, and source-grounded AI assistance |
 
 > DefenseOps is the engineering source of truth. Atlas will index, connect, visualize, search, and operationalize that structured content.
