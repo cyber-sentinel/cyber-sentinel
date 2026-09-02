@@ -71,19 +71,15 @@ I focus on converting cyber risk into practical controls, operating models, dete
 
 ## Featured Security Projects
 
-These repositories are being developed as a practical cybersecurity engineering portfolio:
+The portfolio is being consolidated around a small number of high-signal, production-minded projects rather than many empty repositories.
 
-| Project | Focus |
+| Project | Role |
 |---|---|
-| **[Cyber-Sentinel-Forge](https://github.com/cyber-sentinel/Cyber-Sentinel-Forge)** | Flagship cyber defense engineering lab and reusable security tooling |
-| **detection-engineering-lab** | Sigma, Splunk SPL, Microsoft KQL, Elastic KQL/EQL/ES|QL, detection logic, validation, and tuning |
-| **cyber-deception-lab** | Deception architectures, decoys, lures, active-defense patterns, and deception-driven detections |
-| **threat-hunting-lab** | Threat hunting scenarios, hypotheses, queries, and ATT&CK mappings |
-| **soc-playbooks** | SOC runbooks, incident-response procedures, triage flows, and escalation models |
-| **dfir-fieldbook** | DFIR references, artifacts, investigation notes, and field procedures |
-| **ai-soc-lab** | AI-assisted SOC, LLM security experiments, automation, and enrichment workflows |
+| **[Cyber-Sentinel-DefenseOps](https://github.com/cyber-sentinel/Cyber-Sentinel-Forge)** | Open cyber defense operations engineering core: multi-engine detections, threat hunts, validation, DFIR/IR, deception, automation, and reproducible defensive content |
+| **Cyber-Sentinel-Atlas** *(planned signature project)* | International cyber defense intelligence and analyst platform: fast search, knowledge graph, Windows/Sysmon/Linux/cloud/container references, detection/hunt/DFIR guidance, offline access, API, CLI, and source-grounded AI assistance |
 
-> Repositories are being built incrementally with a focus on technical quality, reproducibility, and real-world defensive value.
+> DefenseOps is the engineering source of truth. Atlas will index, connect, visualize, search, and operationalize that structured content.
+
 
 ---
 
@@ -119,7 +115,7 @@ This profile is being developed around six core pillars:
 
 `Detect` → `Deceive` → `Hunt` → `Respond` → `Investigate` → `Engineer` → `Automate`
 
-The long-term goal is to maintain a high-signal repository of practical cyber defense content, tools, detections, playbooks, labs, and security research.
+The long-term goal is to build a high-signal Cyber-Sentinel ecosystem: DefenseOps as the open defensive engineering core and Atlas as the international cyber defense intelligence, search, and analyst platform.
 
 ---
 
