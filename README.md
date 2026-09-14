@@ -71,23 +71,9 @@ Skills is the operational knowledge layer for reusable cybersecurity procedures 
 
 The repositories have distinct responsibilities and are intentionally not collapsed into one product:
 
-```text
-Authoritative sources / telemetry / security knowledge
-                         │
-                         ▼
-                  ATLAS — KNOW
-        Connect • Search • Investigate • Explain
-                         │
-             evidence / defensive context
-                         ▼
-               DefenseOps — DEFEND
-       Detect • Hunt • Validate • Respond • Automate
-                         │
-              repeatable operating method
-                         ▼
-                  Skills — APPLY
-          Execute • Review • Reuse • Govern
-```
+<p align="center">
+  <img src="./assets/Cyber-Sentinel.png" alt="Cyber-Sentinel project relationship — ATLAS, DefenseOps and Skills" width="100%" />
+</p>
 
 DefenseOps can provide controlled, validated defensive content to Atlas, but repository origin alone does not grant canonical authority. Atlas preserves its own ingestion, provenance, validation, promotion, and release boundaries. Skills remains an operational procedure/playbook layer rather than a substitute for either Atlas product contracts or DefenseOps engineering content.
 
