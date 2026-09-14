@@ -31,21 +31,9 @@ Cyber-Sentinel is where I develop that work as a connected ecosystem rather than
 
 The ecosystem follows a simple operational model:
 
-```text
-                         CYBER-SENTINEL
-                               │
-          ┌────────────────────┼────────────────────┐
-          │                    │                    │
-       ATLAS                DefenseOps            Skills
-       KNOW                  DEFEND                APPLY
-          │                    │                    │
- Knowledge, search,       Detection, hunting,   Operational skills,
- investigation and       validation, response   procedures and reusable
- provenance              and automation         playbooks for humans/AI
-          └────────────────────┼────────────────────┘
-                               │
-                    Evidence-driven Cyber Defense
-```
+<p align="center">
+  <img src="./assets/Atlas-DefenseOps-Skills.png" alt="Cyber-Sentinel Ecosystem — ATLAS, DefenseOps and Skills" width="100%" />
+</p>
 
 ### [Cyber-Sentinel-Atlas](https://github.com/cyber-sentinel/Cyber-Sentinel-Atlas) — KNOW
 
