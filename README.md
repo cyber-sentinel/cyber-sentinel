@@ -133,7 +133,9 @@ DefenseOps can provide controlled, validated defensive content to Atlas, but rep
 
 Cyber-Sentinel is being developed toward an integrated but contract-separated cyber defense ecosystem:
 
-`KNOW → DEFEND → APPLY → VALIDATE → AUTOMATE → EVOLVE`
+<p align="center">
+  <img src="./assets/process-flow.png" alt="Cyber-Sentinel process flow — KNOW, DEFEND, APPLY, VALIDATE, AUTOMATE, EVOLVE" width="100%" />
+</p>
 
 The objective is not repository count. The objective is a high-signal body of security engineering in which knowledge, evidence, detections, investigations, procedures, validation, and automation can reinforce each other without sacrificing provenance or architectural boundaries.
 
