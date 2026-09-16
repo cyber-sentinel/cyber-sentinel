@@ -46,7 +46,8 @@ The objective is not repository count. The objective is a coherent cyber-defense
 
 ### Cyber-Sentinel-Atlas — KNOW
 
-**Provenance-First Cyber Defense Knowledge & Investigation Platform**  
+**Provenance-First Cyber Defense Knowledge & Investigation Platform**
+
 **Repository state:** Private development
 
 ATLAS is the knowledge and investigation product of the ecosystem. It connects security telemetry, adversary behavior, ATT&CK/D3FEND/CAR context, detections, threat hunts, DFIR artifacts, investigation guidance, defensive controls, and claim-level provenance into an inspectable analyst workflow.
@@ -61,7 +62,7 @@ Its foundation is intentionally **offline-first, Windows-first and evidence-firs
 - TUF-based pack trust and rollback protection;
 - Go production Shared Core;
 - bounded local `atlas-core --serve-stdio` protocol;
-- no default local HTTP/TCP listener or hidden network fallback.
+- no default local HTTP/TCP/WebSocket listener or hidden network fallback.
 
 Current engineering status:
 
@@ -70,17 +71,27 @@ Phase 5.1  Product Foundation                 COMPLETE
 Phase 5.2  Canonical Data Model              COMPLETE
 Phase 5.3  Source & Ingestion Core           COMPLETE
 Phase 5.4  Deterministic Search Core         COMPLETE
-Phase 5.5  Offline Pack / Shared Core        COMPLETE / VERIFIED
+Phase 5.5  Offline Pack / Shared Core        COMPLETE / MERGED / VERIFIED
 Phase 5.6  Windows Desktop MVP               IN PROGRESS
+  5.6.0   Environment / Core Boundary       COMPLETE / VERIFIED
+  5.6.1   Executable Candidate Builds       COMPLETE / VERIFIED
+  5.6.2   Hard Gates / Desktop Selection    IN PROGRESS
+  5.6.3   First Preview UI                  PLANNED
+  5.6.4   Packaging / Smoke Closure         PLANNED
 ```
 
-The immediate delivery target is the **first Windows preview**, centered on offline search, canonical record detail, relationship navigation, claim-level provenance, verified pack state, update, safe rollback and Windows packaging. Desktop host technology is being evaluated through executable evidence; no framework is treated as selected until the mandatory gates and ADR process are complete.
+The Phase 5.6.1 executable baseline is complete across **Tauri, Electron and .NET/WPF**, all consuming the same exact-head production Shared Core. Dependency locks, sidecar integrity checks and normalized external measurement are in place. No Desktop framework has been selected yet.
+
+Phase 5.6.2 is now closing the mandatory evidence gates. Production `atlas-core` can resolve the durable Active Generation and construct the canonical/search/graph read model, while malformed or unsafe durable state remains fail-closed. The dedicated signed-pack Active Generation integration gate is still being corrected and must become green before G-D5 can be closed. Verified pack update/rollback operations, Desktop security review, packaging feasibility and final weighted comparison remain ahead of ADR-0026.
+
+The immediate delivery target remains the **first Windows preview**, centered on offline search, canonical record detail, relationship navigation, claim-level provenance, verified pack state, update, safe rollback and Windows packaging.
 
 **Core question:** *What do we know about what we are seeing?*
 
 ### Cyber-Sentinel-DefenseOps — DEFEND
 
-**Open Cyber Defense Operations Engineering**  
+**Open Cyber Defense Operations Engineering**
+
 **Repository state:** Private development
 
 DefenseOps is the defensive engineering layer: reusable and testable detections, hunting content, validation assets, response engineering, DFIR/IR material, deception-oriented content, and automation designed for operational use.
@@ -93,7 +104,8 @@ DefenseOps can provide controlled defensive content to ATLAS, but repository ori
 
 ### [Cyber-Sentinel-Skills](https://github.com/cyber-sentinel/Cyber-Sentinel-Skills) — APPLY
 
-**Vendor-neutral Cybersecurity Operational Skills & Playbooks**  
+**Vendor-neutral Cybersecurity Operational Skills & Playbooks**
+
 **Repository state:** Public
 
 Skills is the reusable operational procedure layer for cybersecurity tasks that can be followed by both humans and AI agents. The goal is to make security work explicit, reviewable, attributable, repeatable, and governable without allowing uncontrolled contributions to redefine product direction.
@@ -109,31 +121,6 @@ Skills does not replace ATLAS product contracts or DefenseOps engineering artifa
 <p align="center">
   <img src="./assets/process-flow.png" alt="Cyber-Sentinel operating loop — KNOW, DEFEND, APPLY, VALIDATE, AUTOMATE, EVOLVE" width="100%" />
 </p>
-
-```text
-Authoritative Sources / Telemetry / Security Knowledge
-                         │
-                         ▼
-                   ATLAS — KNOW
-        Connect • Search • Investigate • Explain
-                         │
-             evidence / defensive context
-                         ▼
-                DefenseOps — DEFEND
-       Detect • Hunt • Validate • Respond • Automate
-                         │
-              repeatable operating method
-                         ▼
-                  Skills — APPLY
-          Execute • Review • Reuse • Govern
-                         │
-                         ▼
-          VALIDATE → AUTOMATE → EVOLVE
-                         │
-                         └──────────────↺
-                    feedback into knowledge,
-                 engineering and procedures
-```
 
 `VALIDATE`, `AUTOMATE`, and `EVOLVE` are ecosystem operating outcomes and feedback stages rather than separate repositories.
 
@@ -215,9 +202,11 @@ Controlled content may flow between projects, but trust is never inherited merel
 
 ## Current Direction
 
-The current engineering priority is to bring **ATLAS to its first Windows preview** without weakening the contracts already established by its canonical model, deterministic search, verified-pack runtime and Shared Core.
+The current engineering priority is to close **ATLAS Phase 5.6.2** without weakening the contracts already established by its canonical model, deterministic search, verified-pack runtime and Shared Core.
 
-Broader Web/PWA, Grounded AI, semantic/vector retrieval, cloud synchronization and expanded platform support are deliberately secondary to completing a trustworthy offline Windows critical path first.
+The immediate sequence is: close the signed-pack Active Generation integration gate, complete core-owned verified pack update and safe rollback operations, finish Desktop security/packaging gates, select one eligible Windows host through ADR-0026, then build the constrained Phase 5.6.3 First Preview UI.
+
+Broader Web/PWA, Grounded AI, semantic/vector retrieval, cloud synchronization and expanded platform support remain deliberately secondary to completing a trustworthy offline Windows critical path first.
 
 The longer-term Cyber-Sentinel objective remains a connected defensive ecosystem in which knowledge can become engineering, engineering can become repeatable operating practice, and operational results can feed back into better knowledge and controls.
 
@@ -233,5 +222,6 @@ The longer-term Cyber-Sentinel objective remains a connected defensive ecosystem
 
 ---
 
-**Maintainer:** Ali RahimDabagh  
+**Maintainer:** Ali RahimDabagh
+
 **GitHub:** `cyber-sentinel`
