@@ -48,7 +48,7 @@ The objective is not repository count. The objective is a coherent cyber-defense
 
 **Provenance-First Cyber Defense Knowledge & Investigation Platform**
 
-**Repository state:** Public source repository • Pre-preview / unreleased
+**Repository state:** Public source repository • Pre-preview / unreleased • PR #39 release closure active
 
 ATLAS is the knowledge and investigation product of the ecosystem. It connects security telemetry, adversary behavior, ATT&CK/D3FEND/CAR context, detections, threat hunts, DFIR artifacts, investigation guidance, defensive controls, and claim-level provenance into an inspectable analyst workflow.
 
@@ -76,22 +76,22 @@ Phase 5.6  Windows Desktop MVP               FEATURE-BRANCH IMPLEMENTATION COMPL
   5.6.0   Environment / Core Boundary       COMPLETE / VERIFIED
   5.6.1   Executable Candidate Builds       COMPLETE / VERIFIED
   5.6.2   Hard Gates / Desktop Selection    COMPLETE / VERIFIED
-           G-D1 through G-D9                PASS / CLOSED
+           G-D1 through G-D9                PASS / CLOSED (frozen selection evidence)
            ADR-0026                         ACCEPTED — Tauri 2.x
   5.6.3   First Preview UI                  COMPLETE / VERIFIED ON FEATURE BRANCH
   5.6.4   Packaging / Clean-Windows Smoke   COMPLETE / VERIFIED ON FEATURE BRANCH
 
-Remaining release path:
-PR review + CI → merge to main → post-merge verification → FIRST PREVIEW READY
+Release closure:
+PR #39 final regression CI → merge to main → post-merge verification → FIRST PREVIEW READY
 ```
 
-Phase 5.6.2 evaluated **Tauri, Electron and .NET/WPF** against the same production Shared Core. All mandatory hard gates closed successfully. The frozen evidence-based weighted review selected **Tauri 2.x**, recorded in ADR-0026.
+Phase 5.6.2 evaluated **Tauri, Electron and .NET/WPF** against the same production Shared Core. All mandatory selection hard gates closed successfully. The frozen evidence-based weighted review selected **Tauri 2.x**, recorded in ADR-0026. Historical multi-candidate regression workflows remain release blockers if a later rerun fails; they do not silently redefine the accepted selection decision.
 
 The selected desktop host retains a narrow security boundary: one main-window capability, explicit command ACLs, CSP `connect-src 'none'`, no Tauri plugins, no generic frontend-controlled Shared Core method bridge, no generic application network API, committed/hash-guarded `Cargo.lock`, and adjacent SHA-256-bound `atlas-core.exe`.
 
 The First Preview UI implements offline global search, canonical record detail, relationship/graph navigation, claim/source provenance, Windows/Sysmon investigation context, verified pack state, pack update, safe rollback/recovery visibility, diagnostics, and UTC/system-local/Tehran-Jalali presentation.
 
-Phase 5.6.4 exact-head run `35095383694` successfully built one byte-bound portable Windows ZIP and consumed the same immutable artifact on a fresh GitHub-hosted Windows runner. The clean-machine gate verified package/payload integrity, relocation, exact Shared Core commit binding, offline probe behavior, fail-closed sidecar corruption handling, verified recovery, WebView2 prerequisite handling, GUI liveness, zero TCP listeners, and zero UDP endpoints owned by ATLAS or Shared Core. Runtime-owned WebView2 UDP, when present, is explicitly attributed in evidence rather than silently ignored.
+Latest verified implementation-head PR packaging evidence is workflow run `35100673319` at commit `8feb39a62a1b480428b180ad68cf6ab88340f513`. It successfully built one byte-bound portable Windows ZIP and consumed the same immutable artifact on a fresh GitHub-hosted Windows runner. The clean-machine gate verified package/payload integrity, relocation, exact Shared Core commit binding, offline probe behavior, fail-closed sidecar corruption handling, verified recovery, WebView2 prerequisite handling, GUI liveness, zero TCP listeners, and zero UDP endpoints owned by ATLAS or Shared Core. Runtime-owned WebView2 UDP, when present, is explicitly attributed in evidence rather than silently ignored.
 
 The First Preview package remains intentionally **unsigned**. Production Authenticode signing, public distribution hardening and binary auto-update are later release-readiness concerns, not hidden First Preview scope.
 
@@ -211,14 +211,14 @@ Controlled content may flow between projects, but trust is never inherited merel
 
 ## Current Direction
 
-The ATLAS implementation critical path for Windows First Preview is now complete on the feature branch. The immediate release-authority sequence is:
+The ATLAS Windows First Preview implementation critical path is complete on the feature branch. Release closure is now the active workstream:
 
 ```text
-Phase 5.6.4 exact-head package + clean-Windows evidence    COMPLETE
+Phase 5.6.0–5.6.4 implementation / feature evidence       COMPLETE
        ↓
-Feature-branch documentation / final review               ACTIVE
+PR #39 final regression CI and review                     ACTIVE
        ↓
-PR + CI                                                   NEXT
+Close every remaining PR regression blocker               ACTIVE
        ↓
 Merge to main                                             PENDING
        ↓
@@ -226,6 +226,8 @@ Post-merge package verification                           PENDING
        ↓
 FIRST PREVIEW READY
 ```
+
+A successful feature-branch package is not treated as a public release by itself. `main` remains release authority, and ATLAS stays **Pre-preview / unreleased** until PR closure, merge, and post-merge package verification all complete.
 
 Broader Web/PWA, Grounded AI, semantic/vector retrieval, cloud synchronization and expanded platform support remain deliberately secondary to completing the trustworthy Windows release path first.
 
