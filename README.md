@@ -8,32 +8,22 @@
 </p>
 
 <p align="center">
-  <strong>Information Security Manager • Cyber Defense Architect</strong>
+  <strong>Security Leadership • Cyber Defense Architecture • Evidence-Driven Engineering</strong>
 </p>
 
 <p align="center">
-  Security Operations & SOC • Threat Hunting & Incident Response • Detection Engineering • DFIR • Security Architecture • AppSec & DevSecOps • AI Security & Automation
+  SOC & THIR • Detection Engineering • DFIR • Security Architecture • AppSec & DevSecOps • AI Security • Defensive Automation
 </p>
 
 ---
 
-## About
+## Cyber-Sentinel
 
-I am an **Information Security Manager and Cyber Defense Architect** with 15+ years of experience across cybersecurity engineering, security operations, incident response, threat hunting, digital forensics, security architecture, and security leadership.
+**Cyber-Sentinel is a connected cyber-defense engineering ecosystem built around one operating idea: knowledge, defensive engineering, and execution procedures should reinforce each other without collapsing their trust boundaries.**
 
-My work sits at the intersection of **security leadership, cyber defense architecture, and hands-on engineering**. I design and mature security programs, build SOC/THIR capabilities, engineer detections and investigation workflows, develop defensive automation, and turn security knowledge into systems that can be tested, governed, and operated in real environments.
+It is designed as a professional security engineering portfolio and product family for practitioners, engineering teams, and security leaders who care about evidence, reproducibility, operational safety, provenance, and production reality.
 
-**Cyber-Sentinel** is where I develop that work as a connected ecosystem rather than a collection of unrelated repositories.
-
----
-
-## Cyber-Sentinel Ecosystem
-
-Cyber-Sentinel follows a contract-separated operating model:
-
-<p align="center">
-  <img src="./assets/Atlas-DefenseOps-Skills.png" alt="Cyber-Sentinel Ecosystem — ATLAS, DefenseOps and Skills" width="100%" />
-</p>
+The ecosystem currently consists of three contract-separated product layers:
 
 ```text
 Cyber-Sentinel
@@ -42,29 +32,29 @@ Cyber-Sentinel
 └── Skills      — APPLY  → Execute • Review • Reuse • Govern
 ```
 
-The objective is not repository count. The objective is a coherent cyber-defense engineering system in which **knowledge, evidence, detections, investigations, procedures, validation and automation reinforce each other without collapsing their trust boundaries**.
+The objective is not repository count. The objective is a coherent operating system for cyber defense in which **knowledge can become engineering, engineering can become repeatable practice, and operational results can feed back into better knowledge and controls**.
 
-### Cyber-Sentinel-Atlas — KNOW
+## Current Product Portfolio
 
-**Provenance-First Cyber Defense Knowledge & Investigation Platform**
+| Product | Role | Current maturity | Primary value |
+| --- | --- | --- | --- |
+| [Cyber-Sentinel-Atlas](https://github.com/cyber-sentinel/Cyber-Sentinel-Atlas) | **KNOW** | Phase 5.6 merged to `main`; post-merge verification active | Provenance-first knowledge, deterministic investigation, verified offline content, analyst workbench |
+| Cyber-Sentinel-DefenseOps | **DEFEND** | Private development; stable baseline `v0.1.0` | Detection engineering, threat hunting, validation, DFIR/IR engineering, response and automation |
+| [Cyber-Sentinel-Skills](https://github.com/cyber-sentinel/Cyber-Sentinel-Skills) | **APPLY** | Public foundation stage | Governed, reusable cybersecurity procedures and playbooks for humans and AI-assisted workflows |
 
-**Repository state:** Public source repository • Pre-preview / unreleased • PR #39 release closure active
+Maturity labels are intentionally conservative. A public repository, passing CI, or successful feature-branch build is not presented as broader production readiness unless the relevant release boundary has actually been closed.
 
-ATLAS is the knowledge and investigation product of the ecosystem. It connects security telemetry, adversary behavior, ATT&CK/D3FEND/CAR context, detections, threat hunts, DFIR artifacts, investigation guidance, defensive controls, and claim-level provenance into an inspectable analyst workflow.
+---
 
-Its foundation is intentionally **offline-first, Windows-first and evidence-first**:
+## ATLAS — KNOW
 
-- governed canonical security records and relationships;
-- deterministic exact-before-lexical retrieval;
-- SQLite + FTS5 search;
-- source and claim-level provenance;
-- verified offline content packs;
-- TUF-based pack trust and rollback protection;
-- Go production Shared Core;
-- bounded local `atlas-core --serve-stdio` protocol;
-- no default local HTTP/TCP/WebSocket listener or hidden network fallback.
+### Provenance-First Cyber Defense Knowledge & Investigation Platform
 
-Current engineering status:
+ATLAS is the knowledge and investigation product of the ecosystem. It connects security telemetry, canonical records, adversary behavior, detections, threat hunts, DFIR artifacts, defensive context, relationships, and claim-level provenance into an inspectable analyst workflow.
+
+**Core question:** *What do we know about what we are seeing?*
+
+### Current engineering state
 
 ```text
 Phase 5.1  Product Foundation                 COMPLETE
@@ -72,56 +62,69 @@ Phase 5.2  Canonical Data Model              COMPLETE
 Phase 5.3  Source & Ingestion Core           COMPLETE
 Phase 5.4  Deterministic Search Core         COMPLETE
 Phase 5.5  Offline Pack / Shared Core        COMPLETE / MERGED / VERIFIED / FROZEN
-Phase 5.6  Windows Desktop MVP               FEATURE-BRANCH IMPLEMENTATION COMPLETE
+Phase 5.6  Windows Desktop MVP               MERGED TO MAIN
   5.6.0   Environment / Core Boundary       COMPLETE / VERIFIED
   5.6.1   Executable Candidate Builds       COMPLETE / VERIFIED
   5.6.2   Hard Gates / Desktop Selection    COMPLETE / VERIFIED
-           G-D1 through G-D9                PASS / CLOSED (frozen selection evidence)
+           G-D1 through G-D9                CLOSED
            ADR-0026                         ACCEPTED — Tauri 2.x
-  5.6.3   First Preview UI                  COMPLETE / VERIFIED ON FEATURE BRANCH
-  5.6.4   Packaging / Clean-Windows Smoke   COMPLETE / VERIFIED ON FEATURE BRANCH
+  5.6.3   First Preview UI                  COMPLETE / VERIFIED
+  5.6.4   Packaging / Clean-Windows Smoke   COMPLETE / VERIFIED ON PR HEAD
 
-Release closure:
-PR #39 final regression CI → merge to main → post-merge verification → FIRST PREVIEW READY
+Current release boundary:
+post-merge verification on main → FIRST PREVIEW READY
 ```
 
-Phase 5.6.2 evaluated **Tauri, Electron and .NET/WPF** against the same production Shared Core. All mandatory selection hard gates closed successfully. The frozen evidence-based weighted review selected **Tauri 2.x**, recorded in ADR-0026. Historical multi-candidate regression workflows remain release blockers if a later rerun fails; they do not silently redefine the accepted selection decision.
+PR #39 has been merged to `main`. The merge commit is `70afc6fdb9e5ce88afdb0dd4de139aa659606f1e`. Post-merge workflows are now the release authority for the First Preview declaration.
 
-The selected desktop host retains a narrow security boundary: one main-window capability, explicit command ACLs, CSP `connect-src 'none'`, no Tauri plugins, no generic frontend-controlled Shared Core method bridge, no generic application network API, committed/hash-guarded `Cargo.lock`, and adjacent SHA-256-bound `atlas-core.exe`.
+### Accepted architecture
 
-The First Preview UI implements offline global search, canonical record detail, relationship/graph navigation, claim/source provenance, Windows/Sysmon investigation context, verified pack state, pack update, safe rollback/recovery visibility, diagnostics, and UTC/system-local/Tehran-Jalali presentation.
+- canonical schema contract `1.0.0` using JSON Schema Draft 2020-12;
+- exactly seven canonical `AtlasRecord` families;
+- deterministic exact-before-lexical retrieval using SQLite + FTS5;
+- TUF-based pack trust, trusted-time, and highest-seen rollback protection;
+- verified `.atlaspack` runtime with immutable generations and Last Known Good semantics;
+- production Shared Core implemented in Go;
+- bounded child-process stdio IPC via `atlas-core --serve-stdio`;
+- no default local HTTP/TCP/WebSocket listener and no hidden network fallback;
+- Windows desktop host selected as Tauri 2.x through frozen, evidence-based evaluation;
+- explicit application command allowlists and CSP `connect-src 'none'`;
+- adjacent SHA-256-bound `atlas-core.exe` sidecar;
+- unsigned portable First Preview packaging boundary, with production Authenticode signing deferred to later release-readiness work.
 
-Latest verified implementation-head PR packaging evidence is workflow run `35100673319` at commit `8feb39a62a1b480428b180ad68cf6ab88340f513`. It successfully built one byte-bound portable Windows ZIP and consumed the same immutable artifact on a fresh GitHub-hosted Windows runner. The clean-machine gate verified package/payload integrity, relocation, exact Shared Core commit binding, offline probe behavior, fail-closed sidecar corruption handling, verified recovery, WebView2 prerequisite handling, GUI liveness, zero TCP listeners, and zero UDP endpoints owned by ATLAS or Shared Core. Runtime-owned WebView2 UDP, when present, is explicitly attributed in evidence rather than silently ignored.
+The First Preview UI implements offline global search, canonical record detail, relationship and graph navigation, source/provenance visibility, verified pack state, pack update, safe rollback/recovery visibility, diagnostics, and UTC/system-local/Tehran-Jalali presentation.
 
-The First Preview package remains intentionally **unsigned**. Production Authenticode signing, public distribution hardening and binary auto-update are later release-readiness concerns, not hidden First Preview scope.
+ATLAS remains intentionally **offline-first, evidence-first, and fail-closed**.
 
-**Core question:** *What do we know about what we are seeing?*
+---
 
-### Cyber-Sentinel-DefenseOps — DEFEND
+## DefenseOps — DEFEND
 
-**Open Cyber Defense Operations Engineering**
+### Production-Aware Cyber Defense Engineering
 
-**Repository state:** Private development
+DefenseOps is the defensive-engineering layer for reusable, testable, evidence-backed detections, hunts, validation assets, response content, DFIR/IR engineering material, deception-oriented controls, and security automation.
 
-DefenseOps is the defensive engineering layer: reusable and testable detections, hunting content, validation assets, response engineering, DFIR/IR material, deception-oriented content, and automation designed for operational use.
+**Core question:** *What can we detect, validate, hunt, and defend — and what evidence supports that claim?*
 
-It emphasizes explicit telemetry prerequisites, engine-aware implementation, validation maturity, production considerations, rollback, and reproducibility rather than simply accumulating rules.
+The current stable baseline is `v0.1.0`. Its validation model includes native Sigma, YARA, Suricata, Snort, and Zeek checks, positive/negative synthetic fixtures, and explicit quality maturity levels.
 
-DefenseOps can provide controlled defensive content to ATLAS, but repository origin alone never grants canonical authority. ATLAS retains its own ingestion, provenance, validation, promotion and release boundaries.
+DefenseOps is deliberately production-conscious: telemetry prerequisites, false positives, engine/language specificity, validation maturity, rollback, and deployment constraints are treated as part of the engineering artifact rather than afterthoughts.
 
-**Core question:** *What can we detect, validate, hunt, and defend?*
+DefenseOps is currently private during active development. Repository visibility does not define product quality or grant licensing rights.
 
-### [Cyber-Sentinel-Skills](https://github.com/cyber-sentinel/Cyber-Sentinel-Skills) — APPLY
+---
 
-**Vendor-neutral Cybersecurity Operational Skills & Playbooks**
+## Skills — APPLY
 
-**Repository state:** Public
+### Governed Cybersecurity Operational Skills & Playbooks
 
-Skills is the reusable operational procedure layer for cybersecurity tasks that can be followed by both humans and AI agents. The goal is to make security work explicit, reviewable, attributable, repeatable, and governable without allowing uncontrolled contributions to redefine product direction.
+Skills is the reusable operating-procedure layer for cybersecurity work that should be explicit enough to execute consistently, review technically, attribute correctly, improve over time, and consume safely in human or AI-assisted workflows.
 
-Skills does not replace ATLAS product contracts or DefenseOps engineering artifacts. It captures the repeatable operating method used to apply them consistently.
+**Core question:** *How should this security task be performed consistently, safely, and verifiably?*
 
-**Core question:** *How should this security task be performed consistently?*
+A Skill is treated as an execution contract rather than a command list. It should make scope, authorization, prerequisites, procedure, evidence, failure conditions, rollback/escalation, expected outputs, and attribution clear.
+
+The repository is currently at foundation stage. It is public, but no project `LICENSE` is presently published; public visibility must not be interpreted as a reuse or redistribution grant.
 
 ---
 
@@ -131,66 +134,34 @@ Skills does not replace ATLAS product contracts or DefenseOps engineering artifa
   <img src="./assets/process-flow.png" alt="Cyber-Sentinel operating loop — KNOW, DEFEND, APPLY, VALIDATE, AUTOMATE, EVOLVE" width="100%" />
 </p>
 
-`VALIDATE`, `AUTOMATE`, and `EVOLVE` are ecosystem operating outcomes and feedback stages rather than separate repositories.
+```text
+Authoritative Sources / Telemetry / Security Knowledge
+                         │
+                         ▼
+                  ATLAS — KNOW
+        Connect • Search • Investigate • Explain
+                         │
+             evidence / defensive context
+                         ▼
+               DefenseOps — DEFEND
+       Detect • Hunt • Validate • Respond • Automate
+                         │
+              repeatable operating method
+                         ▼
+                  Skills — APPLY
+          Execute • Review • Reuse • Govern
+                         │
+                         ▼
+          VALIDATE → AUTOMATE → EVOLVE
+                         │
+                         └──────────────↺
+                    feedback into knowledge,
+                 engineering and procedures
+```
 
----
+`VALIDATE`, `AUTOMATE`, and `EVOLVE` are operating outcomes and feedback stages, not separate repositories.
 
-## How the Projects Relate
-
-The repositories intentionally remain separate:
-
-<p align="center">
-  <img src="./assets/Cyber-Sentinel.png" alt="Cyber-Sentinel project relationship — ATLAS, DefenseOps and Skills" width="100%" />
-</p>
-
-- **ATLAS owns knowledge, canonical context, deterministic retrieval, provenance and analyst investigation surfaces.**
-- **DefenseOps owns defensive engineering content and validation-oriented operational artifacts.**
-- **Skills owns reusable procedures and playbooks for consistent execution.**
-
-Controlled content may flow between projects, but trust is never inherited merely because another Cyber-Sentinel repository produced an artifact. Provenance, validation, versioning and release boundaries remain explicit.
-
----
-
-## Core Competencies
-
-### Security Leadership & Architecture
-
-- Information Security Management, strategy, governance, risk-based prioritization, security roadmaps, KPI/KRI and program maturity
-- SOC & THIR operating models, escalation, incident governance, threat hunting and continuous improvement
-- Security architecture, defense-in-depth, IAM/PAM, segmentation, resilient design and production-aware control engineering
-
-### Cyber Defense Engineering
-
-- **Security Operations & SOC:** SIEM engineering, telemetry strategy, use-case lifecycle, tuning and triage
-- **Threat Hunting & Incident Response:** hypothesis-driven hunting, ATT&CK mapping, containment, eradication and lessons learned
-- **Detection Engineering:** Detection-as-Code, Sigma, Splunk SPL, Microsoft KQL, Elastic KQL/EQL/ES|QL, YARA, Suricata and behavioral analytics
-- **DFIR:** Windows/Linux artifacts, timelines, persistence analysis, evidence handling and investigation workflows
-- **AppSec & DevSecOps:** SSDLC, SAST/DAST/SCA, secrets management, CI/CD security gates and threat modeling
-- **AI Security & Automation:** AI-assisted SOC workflows, enrichment, orchestration, grounded knowledge systems and defensive automation
-
----
-
-## Technology & Security Stack
-
-### SIEM, Detection, NSM & Threat Intelligence
-
-`Splunk` `Wazuh` `MISP` `Sigma` `YARA` `Sysmon` `Zeek` `Suricata` `SOAR` `CTI`
-
-### Endpoint / EDR / XDR
-
-`SentinelOne` `Kaspersky KATA/KEDR` `ESET Inspect` `EDR` `XDR` `Endpoint Telemetry`
-
-### Network, Application & Access Security
-
-`FortiGate` `FortiWeb` `Palo Alto` `F5 BIG-IP` `Cisco` `WAF` `PAM` `DLP` `IAM`
-
-### Engineering & Platforms
-
-`Go` `Python` `PowerShell` `Bash` `Rust` `Git/GitHub Actions` `SQLite/FTS5` `Tauri` `Docker` `Kubernetes` `REST APIs` `JSON` `YAML`
-
-### Frameworks & Standards
-
-`MITRE ATT&CK` `MITRE D3FEND` `MITRE CAR` `NIST CSF` `NIST SP 800-61` `CIS Controls` `ISO/IEC 27001` `OWASP`
+Controlled content may move between products, but trust is never inherited merely because another Cyber-Sentinel repository produced an artifact. Provenance, validation, versioning, authorization, and release boundaries remain explicit.
 
 ---
 
@@ -200,38 +171,47 @@ Controlled content may flow between projects, but trust is never inherited merel
 - **Detection must be measurable and testable.**
 - **Security controls must survive production reality.**
 - **Automation should reduce analyst workload without hiding evidence or decision boundaries.**
-- **Threat intelligence is useful when it changes a defensive decision.**
-- **Incident response must feed back into architecture, detection, and engineering.**
+- **Threat intelligence is valuable when it changes a defensive decision.**
+- **Incident response should feed back into architecture, detection, and engineering.**
 - **AI output in security should be grounded, inspectable, and governed.**
-- **Canonical contracts should not drift merely to satisfy implementation convenience.**
-- **Security engineering should be reproducible, documented, reviewable and rollback-aware.**
-- **Architecture selection should follow executable evidence, not framework preference.**
+- **Canonical contracts should not drift for implementation convenience.**
+- **Security engineering should be reproducible, documented, reviewable, and rollback-aware.**
+- **Architecture decisions should follow executable evidence, not framework preference.**
+
+## Professional Focus
+
+Cyber-Sentinel reflects work across:
+
+- Information Security Management and cyber-defense strategy;
+- SOC and THIR operating models;
+- Detection Engineering and threat hunting;
+- Digital Forensics and Incident Response;
+- security architecture and defense-in-depth;
+- AppSec, SSDLC, and DevSecOps;
+- security automation and orchestration;
+- AI-assisted defensive workflows and grounded security knowledge systems.
+
+### Security technologies and platforms
+
+`Splunk` `Wazuh` `MISP` `Sigma` `YARA` `Sysmon` `Zeek` `Suricata` `SOAR` `CTI` `SentinelOne` `ESET Inspect` `FortiGate` `FortiWeb` `Palo Alto` `F5 BIG-IP` `PAM` `DLP` `IAM`
+
+### Engineering technologies
+
+`Go` `Python` `PowerShell` `Bash` `Rust` `Git/GitHub Actions` `SQLite/FTS5` `Tauri` `Docker` `Kubernetes` `REST APIs` `JSON` `YAML`
+
+### Frameworks and standards
+
+`MITRE ATT&CK` `MITRE D3FEND` `MITRE CAR` `NIST CSF` `NIST SP 800-61` `CIS Controls` `ISO/IEC 27001` `OWASP`
 
 ---
 
-## Current Direction
+## Maintainer
 
-The ATLAS Windows First Preview implementation critical path is complete on the feature branch. Release closure is now the active workstream:
+**Ali RahimDabagh**
 
-```text
-Phase 5.6.0–5.6.4 implementation / feature evidence       COMPLETE
-       ↓
-PR #39 final regression CI and review                     ACTIVE
-       ↓
-Close every remaining PR regression blocker               ACTIVE
-       ↓
-Merge to main                                             PENDING
-       ↓
-Post-merge package verification                           PENDING
-       ↓
-FIRST PREVIEW READY
-```
+Information Security Manager • Cyber Defense Architect
 
-A successful feature-branch package is not treated as a public release by itself. `main` remains release authority, and ATLAS stays **Pre-preview / unreleased** until PR closure, merge, and post-merge package verification all complete.
-
-Broader Web/PWA, Grounded AI, semantic/vector retrieval, cloud synchronization and expanded platform support remain deliberately secondary to completing the trustworthy Windows release path first.
-
-The longer-term Cyber-Sentinel objective remains a connected defensive ecosystem in which knowledge can become engineering, engineering can become repeatable operating practice, and operational results can feed back into better knowledge and controls.
+15+ years across security operations, incident response, threat hunting, digital forensics, security architecture, security engineering, and security leadership.
 
 ---
 
@@ -240,11 +220,5 @@ The longer-term Cyber-Sentinel objective remains a connected defensive ecosystem
 </p>
 
 <p align="center">
-  <sub>Cyber-Sentinel • Security Leadership & Cyber Defense Engineering</sub>
+  <sub>Cyber-Sentinel • Evidence-Driven Security Leadership & Cyber Defense Engineering</sub>
 </p>
-
----
-
-**Maintainer:** Ali RahimDabagh
-
-**GitHub:** `cyber-sentinel`
