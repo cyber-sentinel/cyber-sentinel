@@ -77,16 +77,18 @@ Phase 5.6  Windows Desktop MVP               IN PROGRESS
   5.6.1   Executable Candidate Builds       COMPLETE / VERIFIED
   5.6.2   Hard Gates / Desktop Selection    IN PROGRESS
            G-D5 Active Pack Integration     COMPLETE / VERIFIED
-           G-D6 Update / Safe Rollback      IN PROGRESS
+           G-D6 Update / Safe Rollback      IN PROGRESS — core primitives implemented; closure pending
   5.6.3   First Preview UI                  PLANNED
   5.6.4   Packaging / Smoke Closure         PLANNED
 ```
 
 The executable Windows baseline is green across **Tauri, Electron and .NET/WPF**, all consuming the same production Shared Core. No Desktop framework has been selected yet. Electron has a committed dependency lockfile; Tauri still requires committed `Cargo.lock` closure before final reproducibility evidence is complete.
 
-The signed-pack Active Generation integration gate is now green: production `atlas-core` can load a verified Active Generation into canonical, immutable search and graph read models while malformed/unsafe durable state remains fail-closed. **G-D5 is closed.**
+The signed-pack Active Generation integration gate is green: production `atlas-core` can load a verified Active Generation into canonical, immutable search and graph read models while malformed/unsafe durable state remains fail-closed. **G-D5 is closed.**
 
-The active engineering boundary is **G-D6: core-owned verified pack update and safe manual rollback**. Desktop security review, UDP/no-listener closure, installer/portable feasibility, remaining measurements, and ADR-0026 follow before Phase 5.6.3 can start.
+The active engineering boundary is **G-D6: core-owned verified pack update and safe manual rollback**. Its core primitive layer is implemented on the active feature branch: updates are consumed from a fixed core-owned inbox, verified through durable TUF trust state, rollback targets are core-recorded rather than caller-selected, and manual rollback preserves highest-seen/TUF anti-rollback state. G-D6 is **not yet closed**; stdio protocol exposure, same-process read-model replacement, signed end-to-end update/rollback integration, and failure/recovery validation remain before the gate can be declared verified.
+
+Desktop security review, UDP/no-listener closure, installer/portable feasibility, remaining measurements, reproducibility closure, and ADR-0026 follow before Phase 5.6.3 can start.
 
 The First Preview remains centered on offline search, canonical record detail, relationship navigation, claim-level provenance, Windows/Sysmon-oriented investigation context, verified pack state, update, safe rollback, and Windows packaging.
 
@@ -213,7 +215,7 @@ The current engineering priority is to close **ATLAS Phase 5.6.2** without weake
 The immediate sequence is:
 
 ```text
-G-D6  Verified Pack Update + Safe Manual Rollback
+G-D6  Complete IPC + hot read-model reload + signed update/rollback integration
   ↓
 G-D3  UDP/no-default-listener closure + G-D7 Desktop Security
   ↓
