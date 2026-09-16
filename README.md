@@ -48,7 +48,7 @@ The objective is not repository count. The objective is a coherent cyber-defense
 
 **Provenance-First Cyber Defense Knowledge & Investigation Platform**
 
-**Repository state:** Private development
+**Repository state:** Public source repository • Pre-preview / unreleased
 
 ATLAS is the knowledge and investigation product of the ecosystem. It connects security telemetry, adversary behavior, ATT&CK/D3FEND/CAR context, detections, threat hunts, DFIR artifacts, investigation guidance, defensive controls, and claim-level provenance into an inspectable analyst workflow.
 
@@ -71,20 +71,26 @@ Phase 5.1  Product Foundation                 COMPLETE
 Phase 5.2  Canonical Data Model              COMPLETE
 Phase 5.3  Source & Ingestion Core           COMPLETE
 Phase 5.4  Deterministic Search Core         COMPLETE
-Phase 5.5  Offline Pack / Shared Core        COMPLETE / MERGED / VERIFIED
+Phase 5.5  Offline Pack / Shared Core        COMPLETE / MERGED / VERIFIED / FROZEN
 Phase 5.6  Windows Desktop MVP               IN PROGRESS
   5.6.0   Environment / Core Boundary       COMPLETE / VERIFIED
   5.6.1   Executable Candidate Builds       COMPLETE / VERIFIED
   5.6.2   Hard Gates / Desktop Selection    IN PROGRESS
+           G-D5 Active Pack Integration     COMPLETE / VERIFIED
+           G-D6 Update / Safe Rollback      IN PROGRESS
   5.6.3   First Preview UI                  PLANNED
   5.6.4   Packaging / Smoke Closure         PLANNED
 ```
 
-The Phase 5.6.1 executable baseline is complete across **Tauri, Electron and .NET/WPF**, all consuming the same exact-head production Shared Core. Dependency locks, sidecar integrity checks and normalized external measurement are in place. No Desktop framework has been selected yet.
+The executable Windows baseline is green across **Tauri, Electron and .NET/WPF**, all consuming the same production Shared Core. No Desktop framework has been selected yet. Electron has a committed dependency lockfile; Tauri still requires committed `Cargo.lock` closure before final reproducibility evidence is complete.
 
-Phase 5.6.2 is now closing the mandatory evidence gates. Production `atlas-core` can resolve the durable Active Generation and construct the canonical/search/graph read model, while malformed or unsafe durable state remains fail-closed. The dedicated signed-pack Active Generation integration gate is still being corrected and must become green before G-D5 can be closed. Verified pack update/rollback operations, Desktop security review, packaging feasibility and final weighted comparison remain ahead of ADR-0026.
+The signed-pack Active Generation integration gate is now green: production `atlas-core` can load a verified Active Generation into canonical, immutable search and graph read models while malformed/unsafe durable state remains fail-closed. **G-D5 is closed.**
 
-The immediate delivery target remains the **first Windows preview**, centered on offline search, canonical record detail, relationship navigation, claim-level provenance, verified pack state, update, safe rollback and Windows packaging.
+The active engineering boundary is **G-D6: core-owned verified pack update and safe manual rollback**. Desktop security review, UDP/no-listener closure, installer/portable feasibility, remaining measurements, and ADR-0026 follow before Phase 5.6.3 can start.
+
+The First Preview remains centered on offline search, canonical record detail, relationship navigation, claim-level provenance, Windows/Sysmon-oriented investigation context, verified pack state, update, safe rollback, and Windows packaging.
+
+The UI direction is intentionally operational rather than promotional: dense dark analyst surfaces, restrained theme switching, validated geographic assets, and security-state colors with stable semantics. Generated maps are not treated as product geography.
 
 **Core question:** *What do we know about what we are seeing?*
 
@@ -204,7 +210,23 @@ Controlled content may flow between projects, but trust is never inherited merel
 
 The current engineering priority is to close **ATLAS Phase 5.6.2** without weakening the contracts already established by its canonical model, deterministic search, verified-pack runtime and Shared Core.
 
-The immediate sequence is: close the signed-pack Active Generation integration gate, complete core-owned verified pack update and safe rollback operations, finish Desktop security/packaging gates, select one eligible Windows host through ADR-0026, then build the constrained Phase 5.6.3 First Preview UI.
+The immediate sequence is:
+
+```text
+G-D6  Verified Pack Update + Safe Manual Rollback
+  ↓
+G-D3  UDP/no-default-listener closure + G-D7 Desktop Security
+  ↓
+G-D8  Installer / Portable feasibility
+  ↓
+G-D9  Measurement closure + reproducibility gaps
+  ↓
+ADR-0026  Select one eligible Windows host
+  ↓
+Phase 5.6.3  First Preview UI
+  ↓
+Phase 5.6.4  Packaging + clean-machine smoke closure
+```
 
 Broader Web/PWA, Grounded AI, semantic/vector retrieval, cloud synchronization and expanded platform support remain deliberately secondary to completing a trustworthy offline Windows critical path first.
 
