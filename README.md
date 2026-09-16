@@ -77,7 +77,8 @@ Phase 5.6  Windows Desktop MVP               IN PROGRESS
   5.6.1   Executable Candidate Builds       COMPLETE / VERIFIED
   5.6.2   Hard Gates / Desktop Selection    IN PROGRESS
            G-D5 Active Pack Integration     COMPLETE / VERIFIED
-           G-D6 Update / Safe Rollback      IN PROGRESS — IPC/reload integration-green; round-trip closure pending
+           G-D6 Update / Safe Rollback      COMPLETE / VERIFIED
+           G-D3 UDP / No-listener Closure   IN PROGRESS
   5.6.3   First Preview UI                  PLANNED
   5.6.4   Packaging / Smoke Closure         PLANNED
 ```
@@ -86,9 +87,9 @@ The executable Windows baseline is green across **Tauri, Electron and .NET/WPF**
 
 The signed-pack Active Generation integration gate is green: production `atlas-core` can load a verified Active Generation into canonical, immutable search and graph read models while malformed/unsafe durable state remains fail-closed. **G-D5 is closed.**
 
-The active engineering boundary is **G-D6: core-owned verified pack update and safe manual rollback**. Its control path is now implemented through the bounded stdio protocol: `pack.update` and `pack.rollback` accept no caller-selected path or generation ID, updates are consumed from the fixed core-owned inbox and verified through durable TUF/trusted-time state, successful generation changes hot-reload the read model in the same `atlas-core` process, and manual rollback preserves highest-seen/TUF anti-rollback state. The dedicated Windows Active Pack Integration workflow is green through pending-pack consumption. G-D6 is **not yet closed**; an actual process-level signed update → status/search → rollback → status/search round-trip plus explicit failure/recovery closure must still pass exact-head CI.
+**G-D6 is also closed and verified.** The core-owned update/rollback path is exposed only through the bounded stdio protocol: `pack.update` and `pack.rollback` accept no caller-selected path or generation ID, updates are consumed from the fixed runtime inbox and verified through durable TUF/trusted-time state, successful generation changes hot-reload the read model in the same `atlas-core` process, and manual rollback preserves highest-seen/TUF anti-rollback state. Exact-head Windows run `35075820479` at commit `32874c7b95239579d6c11839a325dec0081d18f5` passed the real-process signed update → status/search → rollback → status/search round trip. The same process-level test also proves that an update signed by an untrusted TUF root is rejected without changing the active generation or breaking search.
 
-Desktop security review, UDP/no-listener closure, installer/portable feasibility, remaining measurements, reproducibility closure, and ADR-0026 follow before Phase 5.6.3 can start.
+The active engineering boundary is now **G-D3 UDP/no-default-listener closure**, followed by G-D7 Desktop Security. Installer/portable feasibility, remaining measurements, reproducibility closure, and ADR-0026 follow before Phase 5.6.3 can start.
 
 The First Preview remains centered on offline search, canonical record detail, relationship navigation, claim-level provenance, Windows/Sysmon-oriented investigation context, verified pack state, update, safe rollback, and Windows packaging.
 
@@ -215,9 +216,9 @@ The current engineering priority is to close **ATLAS Phase 5.6.2** without weake
 The immediate sequence is:
 
 ```text
-G-D6  Process-level signed update/rollback round-trip + recovery closure
+G-D3  UDP/no-default-listener closure
   ↓
-G-D3  UDP/no-default-listener closure + G-D7 Desktop Security
+G-D7  Desktop Security surface
   ↓
 G-D8  Installer / Portable feasibility
   ↓
