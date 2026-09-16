@@ -76,9 +76,12 @@ Phase 5.6  Windows Desktop MVP               IN PROGRESS
   5.6.0   Environment / Core Boundary       COMPLETE / VERIFIED
   5.6.1   Executable Candidate Builds       COMPLETE / VERIFIED
   5.6.2   Hard Gates / Desktop Selection    IN PROGRESS
+           G-D3 Offline / TCP / UDP         COMPLETE / VERIFIED
            G-D5 Active Pack Integration     COMPLETE / VERIFIED
            G-D6 Update / Safe Rollback      COMPLETE / VERIFIED
-           G-D3 UDP / No-listener Closure   IN PROGRESS
+           G-D7 Desktop Security Surface    IN PROGRESS
+           G-D8 Installer / Portable        PENDING
+           G-D9 Measurement Closure         PARTIAL
   5.6.3   First Preview UI                  PLANNED
   5.6.4   Packaging / Smoke Closure         PLANNED
 ```
@@ -89,7 +92,9 @@ The signed-pack Active Generation integration gate is green: production `atlas-c
 
 **G-D6 is also closed and verified.** The core-owned update/rollback path is exposed only through the bounded stdio protocol: `pack.update` and `pack.rollback` accept no caller-selected path or generation ID, updates are consumed from the fixed runtime inbox and verified through durable TUF/trusted-time state, successful generation changes hot-reload the read model in the same `atlas-core` process, and manual rollback preserves highest-seen/TUF anti-rollback state. Exact-head Windows run `35075820479` at commit `32874c7b95239579d6c11839a325dec0081d18f5` passed the real-process signed update → status/search → rollback → status/search round trip. The same process-level test also proves that an update signed by an untrusted TUF root is rejected without changing the active generation or breaking search.
 
-The active engineering boundary is now **G-D3 UDP/no-default-listener closure**, followed by G-D7 Desktop Security. Installer/portable feasibility, remaining measurements, reproducibility closure, and ADR-0026 follow before Phase 5.6.3 can start.
+**G-D3 is closed and verified.** Exact-head Candidate Builds run `35078440647` at commit `4e0a770e06cfacb195bfaf2ebb11a647aabc83e8` probed the full process tree of Tauri, Electron and .NET/WPF and recorded no default TCP listener and no UDP endpoint for any candidate. The active engineering boundary is now **G-D7 Desktop Security Surface**, followed by G-D8 Installer/Portable feasibility and G-D9 measurement/reproducibility closure.
+
+G-D7 is implemented as machine-enforced, candidate-specific policy evidence rather than a manual checklist: Electron isolation/navigation/permission/IPC boundaries, Tauri CSP/capability/application-command ACL/plugin restrictions, and the native .NET/WPF no-browser/no-generic-network/shell-disabled boundary are validated before candidate evidence is summarized. G-D7 remains in progress until its exact-head Windows CI completes successfully.
 
 The First Preview remains centered on offline search, canonical record detail, relationship navigation, claim-level provenance, Windows/Sysmon-oriented investigation context, verified pack state, update, safe rollback, and Windows packaging.
 
@@ -216,8 +221,6 @@ The current engineering priority is to close **ATLAS Phase 5.6.2** without weake
 The immediate sequence is:
 
 ```text
-G-D3  UDP/no-default-listener closure
-  ↓
 G-D7  Desktop Security surface
   ↓
 G-D8  Installer / Portable feasibility
