@@ -79,24 +79,24 @@ Phase 5.6  Windows Desktop MVP               IN PROGRESS
            G-D3 Offline / TCP / UDP         COMPLETE / VERIFIED
            G-D5 Active Pack Integration     COMPLETE / VERIFIED
            G-D6 Update / Safe Rollback      COMPLETE / VERIFIED
-           G-D7 Desktop Security Surface    IN PROGRESS
-           G-D8 Installer / Portable        PENDING
+           G-D7 Desktop Security Surface    IMPLEMENTED / CI PENDING
+           G-D8 Installer / Portable        IMPLEMENTED / CI PENDING
            G-D9 Measurement Closure         PARTIAL
   5.6.3   First Preview UI                  PLANNED
   5.6.4   Packaging / Smoke Closure         PLANNED
 ```
 
-The executable Windows baseline is green across **Tauri, Electron and .NET/WPF**, all consuming the same production Shared Core. No Desktop framework has been selected yet. Electron has a committed dependency lockfile; Tauri still requires committed `Cargo.lock` closure before final reproducibility evidence is complete.
+The executable Windows baseline is green across **Tauri, Electron and .NET/WPF**, all consuming the same production Shared Core. No Desktop framework has been selected yet. Electron has a committed `package-lock.json`; Tauri now also has a committed `Cargo.lock`, and Candidate CI requires that lockfile, verifies its approved SHA-256, builds with `--locked`, resolves metadata with `--locked`, and fails on lockfile mutation. The dependency graph is no longer regenerated during Candidate CI.
 
 The signed-pack Active Generation integration gate is green: production `atlas-core` can load a verified Active Generation into canonical, immutable search and graph read models while malformed/unsafe durable state remains fail-closed. **G-D5 is closed.**
 
 **G-D6 is also closed and verified.** The core-owned update/rollback path is exposed only through the bounded stdio protocol: `pack.update` and `pack.rollback` accept no caller-selected path or generation ID, updates are consumed from the fixed runtime inbox and verified through durable TUF/trusted-time state, successful generation changes hot-reload the read model in the same `atlas-core` process, and manual rollback preserves highest-seen/TUF anti-rollback state. Exact-head Windows run `35075820479` at commit `32874c7b95239579d6c11839a325dec0081d18f5` passed the real-process signed update → status/search → rollback → status/search round trip. The same process-level test also proves that an update signed by an untrusted TUF root is rejected without changing the active generation or breaking search.
 
-**G-D3 is closed and verified.** Exact-head Candidate Builds run `35078440647` at commit `4e0a770e06cfacb195bfaf2ebb11a647aabc83e8` probed the full process tree of Tauri, Electron and .NET/WPF and recorded no default TCP listener and no UDP endpoint for any candidate. The active engineering boundary is now **G-D7 Desktop Security Surface**, followed by G-D8 Installer/Portable feasibility and G-D9 measurement/reproducibility closure.
+**G-D3 is closed and verified.** Exact-head Candidate Builds run `35078440647` at commit `4e0a770e06cfacb195bfaf2ebb11a647aabc83e8` probed the full process tree of Tauri, Electron and .NET/WPF and recorded no default TCP listener and no UDP endpoint for any candidate.
 
-G-D7 is implemented as machine-enforced, candidate-specific policy evidence rather than a manual checklist: Electron isolation/navigation/permission/IPC boundaries, Tauri CSP/capability/application-command ACL/plugin restrictions, and the native .NET/WPF no-browser/no-generic-network/shell-disabled boundary are validated before candidate evidence is summarized. G-D7 remains in progress until its exact-head Windows CI completes successfully.
+**G-D7 and G-D8 are implemented but not yet declared verified.** G-D7 is machine-enforced, candidate-specific policy evidence covering Electron isolation/navigation/permission/IPC boundaries, Tauri CSP/capability/application-command ACL/plugin restrictions, and the native .NET/WPF no-browser/no-generic-network/shell-disabled boundary. G-D8 executes each real candidate from a relocated path containing spaces, preserves the adjacent Shared Core integrity boundary, and validates portable/packaging feasibility. Real installer build/signing and clean-machine installer smoke remain Phase 5.6.4 work.
 
-The First Preview remains centered on offline search, canonical record detail, relationship navigation, claim-level provenance, Windows/Sysmon-oriented investigation context, verified pack state, update, safe rollback, and Windows packaging.
+The active engineering boundary is therefore **successful Windows CI verification for G-D7/G-D8**, followed by G-D9 measurement closure and the ADR-0026 weighted selection. The First Preview remains centered on offline search, canonical record detail, relationship navigation, claim-level provenance, Windows/Sysmon-oriented investigation context, verified pack state, update, safe rollback, and Windows packaging.
 
 The UI direction is intentionally operational rather than promotional: dense dark analyst surfaces, restrained theme switching, validated geographic assets, and security-state colors with stable semantics. Generated maps are not treated as product geography.
 
@@ -221,17 +221,15 @@ The current engineering priority is to close **ATLAS Phase 5.6.2** without weake
 The immediate sequence is:
 
 ```text
-G-D7  Desktop Security surface
-  ↓
-G-D8  Installer / Portable feasibility
-  ↓
-G-D9  Measurement closure + reproducibility gaps
-  ↓
-ADR-0026  Select one eligible Windows host
-  ↓
-Phase 5.6.3  First Preview UI
-  ↓
-Phase 5.6.4  Packaging + clean-machine smoke closure
+G-D7 / G-D8  Exact-head Windows CI verification
+       ↓
+G-D9           Measurement closure
+       ↓
+ADR-0026       Select one eligible Windows host
+       ↓
+Phase 5.6.3    First Preview UI
+       ↓
+Phase 5.6.4    Packaging + signed/clean-machine smoke closure
 ```
 
 Broader Web/PWA, Grounded AI, semantic/vector retrieval, cloud synchronization and expanded platform support remain deliberately secondary to completing a trustworthy offline Windows critical path first.
