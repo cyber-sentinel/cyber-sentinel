@@ -72,33 +72,28 @@ Phase 5.2  Canonical Data Model              COMPLETE
 Phase 5.3  Source & Ingestion Core           COMPLETE
 Phase 5.4  Deterministic Search Core         COMPLETE
 Phase 5.5  Offline Pack / Shared Core        COMPLETE / MERGED / VERIFIED / FROZEN
-Phase 5.6  Windows Desktop MVP               IN PROGRESS
+Phase 5.6  Windows Desktop MVP               FEATURE-BRANCH IMPLEMENTATION COMPLETE
   5.6.0   Environment / Core Boundary       COMPLETE / VERIFIED
   5.6.1   Executable Candidate Builds       COMPLETE / VERIFIED
-  5.6.2   Hard Gates / Desktop Selection    IN PROGRESS
-           G-D3 Offline / TCP / UDP         COMPLETE / VERIFIED
-           G-D5 Active Pack Integration     COMPLETE / VERIFIED
-           G-D6 Update / Safe Rollback      COMPLETE / VERIFIED
-           G-D7 Desktop Security Surface    IMPLEMENTED / CI PENDING
-           G-D8 Installer / Portable        IMPLEMENTED / CI PENDING
-           G-D9 Measurement Closure         PARTIAL
-  5.6.3   First Preview UI                  PLANNED
-  5.6.4   Packaging / Smoke Closure         PLANNED
+  5.6.2   Hard Gates / Desktop Selection    COMPLETE / VERIFIED
+           G-D1 through G-D9                PASS / CLOSED
+           ADR-0026                         ACCEPTED — Tauri 2.x
+  5.6.3   First Preview UI                  COMPLETE / VERIFIED ON FEATURE BRANCH
+  5.6.4   Packaging / Clean-Windows Smoke   COMPLETE / VERIFIED ON FEATURE BRANCH
+
+Remaining release path:
+PR review + CI → merge to main → post-merge verification → FIRST PREVIEW READY
 ```
 
-The executable Windows baseline is green across **Tauri, Electron and .NET/WPF**, all consuming the same production Shared Core. No Desktop framework has been selected yet. Electron has a committed `package-lock.json`; Tauri now also has a committed `Cargo.lock`, and Candidate CI requires that lockfile, verifies its approved SHA-256, builds with `--locked`, resolves metadata with `--locked`, and fails on lockfile mutation. The dependency graph is no longer regenerated during Candidate CI.
+Phase 5.6.2 evaluated **Tauri, Electron and .NET/WPF** against the same production Shared Core. All mandatory hard gates closed successfully. The frozen evidence-based weighted review selected **Tauri 2.x**, recorded in ADR-0026.
 
-The signed-pack Active Generation integration gate is green: production `atlas-core` can load a verified Active Generation into canonical, immutable search and graph read models while malformed/unsafe durable state remains fail-closed. **G-D5 is closed.**
+The selected desktop host retains a narrow security boundary: one main-window capability, explicit command ACLs, CSP `connect-src 'none'`, no Tauri plugins, no generic frontend-controlled Shared Core method bridge, no generic application network API, committed/hash-guarded `Cargo.lock`, and adjacent SHA-256-bound `atlas-core.exe`.
 
-**G-D6 is also closed and verified.** The core-owned update/rollback path is exposed only through the bounded stdio protocol: `pack.update` and `pack.rollback` accept no caller-selected path or generation ID, updates are consumed from the fixed runtime inbox and verified through durable TUF/trusted-time state, successful generation changes hot-reload the read model in the same `atlas-core` process, and manual rollback preserves highest-seen/TUF anti-rollback state. Exact-head Windows run `35075820479` at commit `32874c7b95239579d6c11839a325dec0081d18f5` passed the real-process signed update → status/search → rollback → status/search round trip. The same process-level test also proves that an update signed by an untrusted TUF root is rejected without changing the active generation or breaking search.
+The First Preview UI implements offline global search, canonical record detail, relationship/graph navigation, claim/source provenance, Windows/Sysmon investigation context, verified pack state, pack update, safe rollback/recovery visibility, diagnostics, and UTC/system-local/Tehran-Jalali presentation.
 
-**G-D3 is closed and verified.** Exact-head Candidate Builds run `35078440647` at commit `4e0a770e06cfacb195bfaf2ebb11a647aabc83e8` probed the full process tree of Tauri, Electron and .NET/WPF and recorded no default TCP listener and no UDP endpoint for any candidate.
+Phase 5.6.4 exact-head run `35095383694` successfully built one byte-bound portable Windows ZIP and consumed the same immutable artifact on a fresh GitHub-hosted Windows runner. The clean-machine gate verified package/payload integrity, relocation, exact Shared Core commit binding, offline probe behavior, fail-closed sidecar corruption handling, verified recovery, WebView2 prerequisite handling, GUI liveness, zero TCP listeners, and zero UDP endpoints owned by ATLAS or Shared Core. Runtime-owned WebView2 UDP, when present, is explicitly attributed in evidence rather than silently ignored.
 
-**G-D7 and G-D8 are implemented but not yet declared verified.** G-D7 is machine-enforced, candidate-specific policy evidence covering Electron isolation/navigation/permission/IPC boundaries, Tauri CSP/capability/application-command ACL/plugin restrictions, and the native .NET/WPF no-browser/no-generic-network/shell-disabled boundary. G-D8 executes each real candidate from a relocated path containing spaces, preserves the adjacent Shared Core integrity boundary, and validates portable/packaging feasibility. Real installer build/signing and clean-machine installer smoke remain Phase 5.6.4 work.
-
-The active engineering boundary is therefore **successful Windows CI verification for G-D7/G-D8**, followed by G-D9 measurement closure and the ADR-0026 weighted selection. The First Preview remains centered on offline search, canonical record detail, relationship navigation, claim-level provenance, Windows/Sysmon-oriented investigation context, verified pack state, update, safe rollback, and Windows packaging.
-
-The UI direction is intentionally operational rather than promotional: dense dark analyst surfaces, restrained theme switching, validated geographic assets, and security-state colors with stable semantics. Generated maps are not treated as product geography.
+The First Preview package remains intentionally **unsigned**. Production Authenticode signing, public distribution hardening and binary auto-update are later release-readiness concerns, not hidden First Preview scope.
 
 **Core question:** *What do we know about what we are seeing?*
 
@@ -191,7 +186,7 @@ Controlled content may flow between projects, but trust is never inherited merel
 
 ### Engineering & Platforms
 
-`Go` `Python` `PowerShell` `Bash` `Rust` `Git/GitHub Actions` `SQLite/FTS5` `Docker` `Kubernetes` `REST APIs` `JSON` `YAML`
+`Go` `Python` `PowerShell` `Bash` `Rust` `Git/GitHub Actions` `SQLite/FTS5` `Tauri` `Docker` `Kubernetes` `REST APIs` `JSON` `YAML`
 
 ### Frameworks & Standards
 
@@ -216,23 +211,23 @@ Controlled content may flow between projects, but trust is never inherited merel
 
 ## Current Direction
 
-The current engineering priority is to close **ATLAS Phase 5.6.2** without weakening the contracts already established by its canonical model, deterministic search, verified-pack runtime and Shared Core.
-
-The immediate sequence is:
+The ATLAS implementation critical path for Windows First Preview is now complete on the feature branch. The immediate release-authority sequence is:
 
 ```text
-G-D7 / G-D8  Exact-head Windows CI verification
+Phase 5.6.4 exact-head package + clean-Windows evidence    COMPLETE
        ↓
-G-D9           Measurement closure
+Feature-branch documentation / final review               ACTIVE
        ↓
-ADR-0026       Select one eligible Windows host
+PR + CI                                                   NEXT
        ↓
-Phase 5.6.3    First Preview UI
+Merge to main                                             PENDING
        ↓
-Phase 5.6.4    Packaging + signed/clean-machine smoke closure
+Post-merge package verification                           PENDING
+       ↓
+FIRST PREVIEW READY
 ```
 
-Broader Web/PWA, Grounded AI, semantic/vector retrieval, cloud synchronization and expanded platform support remain deliberately secondary to completing a trustworthy offline Windows critical path first.
+Broader Web/PWA, Grounded AI, semantic/vector retrieval, cloud synchronization and expanded platform support remain deliberately secondary to completing the trustworthy Windows release path first.
 
 The longer-term Cyber-Sentinel objective remains a connected defensive ecosystem in which knowledge can become engineering, engineering can become repeatable operating practice, and operational results can feed back into better knowledge and controls.
 
