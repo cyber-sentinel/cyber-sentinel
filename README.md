@@ -38,11 +38,11 @@ The objective is not repository count. The objective is a coherent operating sys
 
 | Product | Role | Current maturity | Primary value |
 | --- | --- | --- | --- |
-| [Cyber-Sentinel-Atlas](https://github.com/cyber-sentinel/Cyber-Sentinel-Atlas) | **KNOW** | Phase 5.6 merged to `main`; post-merge verification active | Provenance-first knowledge, deterministic investigation, verified offline content, analyst workbench |
+| [Cyber-Sentinel-Atlas](https://github.com/cyber-sentinel/Cyber-Sentinel-Atlas) | **KNOW** | **First Preview engineering readiness: READY**; public release remains Pre-preview / unreleased | Provenance-first knowledge, deterministic investigation, verified offline content, analyst workbench |
 | Cyber-Sentinel-DefenseOps | **DEFEND** | Private development; stable baseline `v0.1.0` | Detection engineering, threat hunting, validation, DFIR/IR engineering, response and automation |
 | [Cyber-Sentinel-Skills](https://github.com/cyber-sentinel/Cyber-Sentinel-Skills) | **APPLY** | Public foundation stage | Governed, reusable cybersecurity procedures and playbooks for humans and AI-assisted workflows |
 
-Maturity labels are intentionally conservative. A public repository, passing CI, or successful feature-branch build is not presented as broader production readiness unless the relevant release boundary has actually been closed.
+Maturity labels are intentionally conservative. A public repository, passing CI, or successful preview build is not presented as GA or universal production readiness unless the relevant release boundary has actually been closed.
 
 ---
 
@@ -52,30 +52,32 @@ Maturity labels are intentionally conservative. A public repository, passing CI,
 
 ATLAS is the knowledge and investigation product of the ecosystem. It connects security telemetry, canonical records, adversary behavior, detections, threat hunts, DFIR artifacts, defensive context, relationships, and claim-level provenance into an inspectable analyst workflow.
 
-**Core question:** *What do we know about what we are seeing?*
+**Core question:** *What do we know about what we are seeing — and what evidence supports it?*
 
 ### Current engineering state
 
 ```text
 Phase 5.1  Product Foundation                 COMPLETE
-Phase 5.2  Canonical Data Model              COMPLETE
-Phase 5.3  Source & Ingestion Core           COMPLETE
-Phase 5.4  Deterministic Search Core         COMPLETE
-Phase 5.5  Offline Pack / Shared Core        COMPLETE / MERGED / VERIFIED / FROZEN
-Phase 5.6  Windows Desktop MVP               MERGED TO MAIN
+Phase 5.2  Canonical Data Model              COMPLETE / MERGED
+Phase 5.3  Source & Ingestion Core           COMPLETE / MERGED
+Phase 5.4  Deterministic Search Core         COMPLETE / MERGED
+Phase 5.5  Offline Pack / Shared Core        COMPLETE / MERGED / POST-MERGE VERIFIED / FROZEN
+Phase 5.6  Windows Desktop MVP               COMPLETE / MERGED / POST-MERGE VERIFIED
   5.6.0   Environment / Core Boundary       COMPLETE / VERIFIED
   5.6.1   Executable Candidate Builds       COMPLETE / VERIFIED
   5.6.2   Hard Gates / Desktop Selection    COMPLETE / VERIFIED
-           G-D1 through G-D9                CLOSED
+           G-D1 through G-D9                PASS / CLOSED
            ADR-0026                         ACCEPTED — Tauri 2.x
-  5.6.3   First Preview UI                  COMPLETE / VERIFIED
-  5.6.4   Packaging / Clean-Windows Smoke   COMPLETE / VERIFIED ON PR HEAD
+  5.6.3   First Preview UI                  COMPLETE / MERGED / VERIFIED
+  5.6.4   Packaging / Clean-Windows Smoke   COMPLETE / MERGED / POST-MERGE VERIFIED
 
-Current release boundary:
-post-merge verification on main → FIRST PREVIEW READY
+FIRST PREVIEW READY — ENGINEERING READINESS
+Public binary release — PRE-PREVIEW / UNRELEASED
 ```
 
-PR #39 has been merged to `main`. The merge commit is `70afc6fdb9e5ce88afdb0dd4de139aa659606f1e`. Post-merge workflows are now the release authority for the First Preview declaration.
+PR #39 merged the Phase 5.6 implementation to `main` at `70afc6fdb9e5ce88afdb0dd4de139aa659606f1e`. Post-merge package run `35133827422` completed successfully on that release baseline. PR #41 subsequently synchronized the public README and authoritative project-state documents; current ATLAS `main` is `d839bb366dbbd10282f6b6da70000d2fa4aaf826`.
+
+The First Preview is an engineering-ready, unsigned portable Windows artifact. Production Authenticode signing, installer/public-distribution hardening, third-party licensing/redistribution closure, broader accessibility review, source freshness policy, and public launch criteria remain **Phase 5.10 — Public Preview Readiness** work.
 
 ### Accepted architecture
 
@@ -90,7 +92,8 @@ PR #39 has been merged to `main`. The merge commit is `70afc6fdb9e5ce88afdb0dd4d
 - Windows desktop host selected as Tauri 2.x through frozen, evidence-based evaluation;
 - explicit application command allowlists and CSP `connect-src 'none'`;
 - adjacent SHA-256-bound `atlas-core.exe` sidecar;
-- unsigned portable First Preview packaging boundary, with production Authenticode signing deferred to later release-readiness work.
+- fail-closed sidecar integrity handling and verified recovery;
+- unsigned First Preview packaging boundary, with production signing deferred to Public Preview readiness.
 
 The First Preview UI implements offline global search, canonical record detail, relationship and graph navigation, source/provenance visibility, verified pack state, pack update, safe rollback/recovery visibility, diagnostics, and UTC/system-local/Tehran-Jalali presentation.
 
@@ -108,7 +111,7 @@ DefenseOps is the defensive-engineering layer for reusable, testable, evidence-b
 
 The current stable baseline is `v0.1.0`. Its validation model includes native Sigma, YARA, Suricata, Snort, and Zeek checks, positive/negative synthetic fixtures, and explicit quality maturity levels.
 
-DefenseOps is deliberately production-conscious: telemetry prerequisites, false positives, engine/language specificity, validation maturity, rollback, and deployment constraints are treated as part of the engineering artifact rather than afterthoughts.
+DefenseOps is deliberately production-conscious: telemetry prerequisites, false positives, engine/language specificity, validation maturity, rollback, reproducibility, and deployment constraints are treated as part of the engineering artifact rather than afterthoughts.
 
 DefenseOps is currently private during active development. Repository visibility does not define product quality or grant licensing rights.
 
@@ -122,7 +125,7 @@ Skills is the reusable operating-procedure layer for cybersecurity work that sho
 
 **Core question:** *How should this security task be performed consistently, safely, and verifiably?*
 
-A Skill is treated as an execution contract rather than a command list. It should make scope, authorization, prerequisites, procedure, evidence, failure conditions, rollback/escalation, expected outputs, and attribution clear.
+A Skill is treated as a governed execution contract rather than a command list. It should make scope, authorization, prerequisites, procedure, evidence, failure conditions, rollback/escalation, expected outputs, and attribution clear.
 
 The repository is currently at foundation stage. It is public, but no project `LICENSE` is presently published; public visibility must not be interpreted as a reuse or redistribution grant.
 
@@ -177,6 +180,17 @@ Controlled content may move between products, but trust is never inherited merel
 - **Canonical contracts should not drift for implementation convenience.**
 - **Security engineering should be reproducible, documented, reviewable, and rollback-aware.**
 - **Architecture decisions should follow executable evidence, not framework preference.**
+
+## Commercial Maturity Discipline
+
+Cyber-Sentinel uses explicit maturity boundaries rather than marketing shorthand:
+
+- **Engineering ready** means the defined engineering and verification gates have passed.
+- **Public preview ready** additionally requires signing, distribution, licensing, accessibility, release governance, and publication criteria.
+- **Production ready** is environment-specific and cannot be inferred from repository CI alone.
+- **Public source visibility** does not grant reuse or redistribution rights when no project license has been published.
+
+This distinction is intentional for security products: confidence should follow evidence, not branding.
 
 ## Professional Focus
 
