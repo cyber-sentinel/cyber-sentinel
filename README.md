@@ -39,7 +39,7 @@ The objective is not repository count. The objective is a coherent operating sys
 | Product | Role | Current maturity | Primary value |
 | --- | --- | --- | --- |
 | [Cyber-Sentinel-Atlas](https://github.com/cyber-sentinel/Cyber-Sentinel-Atlas) | **KNOW** | **First Preview engineering readiness: READY**; public release remains Pre-preview / unreleased | Provenance-first knowledge, deterministic investigation, verified offline content, analyst workbench |
-| Cyber-Sentinel-DefenseOps | **DEFEND** | Private development; stable baseline `v0.1.0` | Detection engineering, threat hunting, validation, DFIR/IR engineering, response and automation |
+| [Cyber-Sentinel-DefenseOps](https://github.com/cyber-sentinel/Cyber-Sentinel-DefenseOps) | **DEFEND** | Public source repository; stable baseline `v0.1.0` | Detection engineering, threat hunting, validation, DFIR/IR engineering, response and automation |
 | [Cyber-Sentinel-Skills](https://github.com/cyber-sentinel/Cyber-Sentinel-Skills) | **APPLY** | Public foundation stage | Governed, reusable cybersecurity procedures and playbooks for humans and AI-assisted workflows |
 
 Maturity labels are intentionally conservative. A public repository, passing CI, or successful preview build is not presented as GA or universal production readiness unless the relevant release boundary has actually been closed.
@@ -113,7 +113,7 @@ The current stable baseline is `v0.1.0`. Its validation model includes native Si
 
 DefenseOps is deliberately production-conscious: telemetry prerequisites, false positives, engine/language specificity, validation maturity, rollback, reproducibility, and deployment constraints are treated as part of the engineering artifact rather than afterthoughts.
 
-DefenseOps is currently private during active development. Repository visibility does not define product quality or grant licensing rights.
+DefenseOps is a public source repository. No project `LICENSE` is currently published, so public visibility must not be interpreted as a reuse or redistribution grant.
 
 ---
 
