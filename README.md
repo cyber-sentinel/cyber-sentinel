@@ -50,7 +50,7 @@ Cyber-Sentinel addresses these problems through three explicit product layers wi
 
 | Product | Role | Current maturity | Primary value |
 | --- | --- | --- | --- |
-| [Cyber-Sentinel-Atlas](https://github.com/cyber-sentinel/Cyber-Sentinel-Atlas) | **KNOW** | **First Preview engineering readiness: READY**; Phase 5.10 Public Preview readiness **ACTIVE / BLOCKED** | Provenance-first knowledge, deterministic investigation, verified offline content, analyst workbench |
+| [Cyber-Sentinel-Atlas](https://github.com/cyber-sentinel/Cyber-Sentinel-Atlas) | **KNOW** | **First Preview engineering readiness: READY**; Public Preview readiness **ACTIVE / BLOCKED** | Provenance-first knowledge, deterministic investigation, verified offline content, analyst workbench |
 | [Cyber-Sentinel-DefenseOps](https://github.com/cyber-sentinel/Cyber-Sentinel-DefenseOps) | **DEFEND** | Stable engineering baseline `0.1.0`; no GitHub Release/tag currently published | Detection engineering, threat hunting, validation, DFIR/IR engineering, response and automation |
 | [Cyber-Sentinel-Skills](https://github.com/cyber-sentinel/Cyber-Sentinel-Skills) | **APPLY** | Foundation / operating-model stage | Governed cybersecurity procedures and playbooks for humans and AI-assisted workflows |
 
@@ -93,14 +93,14 @@ Phase 5.6  Windows Desktop MVP               COMPLETE / MERGED / POST-MERGE VERI
 
 FIRST PREVIEW READY — ENGINEERING READINESS
 
-Phase 5.10 Public Preview Readiness           ACTIVE
-  5.10.0 Readiness Baseline                  MERGED / POST-MERGE VERIFIED
-Public Preview release                        BLOCKED
+Phase 5.10 Public Preview Readiness           ACTIVE / BLOCKED
+  PPR-08 Source freshness/publication         PASS
+  PPR-09 Launch/rollback/revocation           PASS
+  PPR-07 Accessibility release review         PARTIAL
+  PPR-03/04/05/06 Release/legal/signing       BLOCKED
 ```
 
-The First Preview package baseline is bound to `main@70afc6fdb9e5ce88afdb0dd4de139aa659606f1e` and post-merge package run `35133827422`. Phase 5.10.0 subsequently established machine-enforced Public Preview readiness controls without changing the frozen First Preview package evidence.
-
-The First Preview is an engineering-ready, unsigned portable Windows artifact. Public Preview remains blocked by explicit release-readiness boundaries such as first-party licensing, third-party redistribution closure, production code signing/key custody, public packaging/distribution hardening, accessibility review, source-freshness policy, and launch governance.
+The First Preview is an engineering-ready, unsigned portable Windows artifact. The Public Preview control plane now has explicit source-freshness/publication policy and launch/rollback/revocation governance. Public Preview still remains blocked by first-party licensing, third-party redistribution closure, production code signing/key custody, public packaging/distribution hardening, and the exact packaged accessibility release review.
 
 ### Accepted architecture
 
