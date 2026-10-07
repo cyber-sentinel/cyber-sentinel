@@ -77,9 +77,9 @@ ATLAS connects telemetry, canonical security records, adversary behavior, defens
 - production Shared Core: Go;
 - Desktop host: Tauri 2.x over bounded child-process stdio;
 - no default local HTTP/TCP/WebSocket listener;
-- Windows Security Auditing: **110/423 encyclopedia-grade**, `313` remaining;
-- Windows Security encyclopedia-grade corpus: **110 Event IDs**; Batch 11 adds `4743`–`4752`, while the authoritative full identity list remains in the ATLAS coverage ledger;
-- Ultimate Windows Security (UWS) cross-provider review benchmark: **116/422** listed Event IDs (**27.49%**), `306` remaining; benchmark / Quick Detail use only — Microsoft documentation plus controlled provider evidence remain authoritative;
+- Windows Security Auditing: **120/423 encyclopedia-grade**, `303` remaining;
+- Windows Security encyclopedia-grade corpus: **120 Event IDs**; Batch 12 adds `4753`–`4762`, while the authoritative full identity list remains in the ATLAS coverage ledger;
+- Ultimate Windows Security (UWS) cross-provider review benchmark: **126/422** listed Event IDs (**29.86%**), `296` remaining; benchmark / Quick Detail use only — Microsoft documentation plus controlled provider evidence remain authoritative;
 - Sysmon 15.22: **30/30 encyclopedia-grade COMPLETE**;
 - global Windows denominator: intentionally **not frozen** while additional mandatory telemetry families are still being controlled.
 
