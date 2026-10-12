@@ -32,29 +32,8 @@ Cyber-Sentinel is a contract-separated cyber-defense ecosystem for turning **tru
 | [**DefenseOps**](https://github.com/cyber-sentinel/Cyber-Sentinel-DefenseOps) | **DEFEND** | What can we detect, hunt, validate, and defend — and what evidence supports that claim? | Stable engineering baseline `0.1.0`; no published GitHub Release/tag |
 | [**Skills**](https://github.com/cyber-sentinel/Cyber-Sentinel-Skills) | **APPLY** | How should a security task be performed consistently, safely, and verifiably? | Foundation v0.1 under controlled review; official release not authorized |
 
-```text
-Authoritative Sources / Telemetry / Security Knowledge
-                         │
-                         ▼
-                  ATLAS — KNOW
-        Connect • Search • Investigate • Explain
-                         │
-                         ▼
-               DefenseOps — DEFEND
-       Detect • Hunt • Validate • Respond • Automate
-                         │
-                         ▼
-                  Skills — APPLY
-          Execute • Review • Reuse • Govern
-                         │
-                         ▼
-          VALIDATE → AUTOMATE → EVOLVE
-                         │
-                         └──────────────↺
-```
-
 <p align="center">
-  <img src="./assets/process-flow.png" alt="Cyber-Sentinel operating loop" width="100%" />
+  <img src="./assets/ecosystem-overview.svg" alt="Cyber-Sentinel ecosystem: ATLAS KNOW, DefenseOps DEFEND, Skills APPLY, with validation and feedback" width="100%" />
 </p>
 
 ## ATLAS — KNOW
