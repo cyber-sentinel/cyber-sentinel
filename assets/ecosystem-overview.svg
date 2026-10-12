@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720" role="img" aria-labelledby="title desc">
+  <title id="title">Cyber-Sentinel ecosystem overview</title>
+  <desc id="desc">ATLAS provides knowledge, DefenseOps provides defensive engineering, and Skills provides governed execution, connected by validation and feedback.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="atlas" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="defend" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#dc2626"/>
+      <stop offset="1" stop-color="#fb7185"/>
+    </linearGradient>
+    <linearGradient id="skills" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#c084fc"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#5eead4"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="720" rx="30" fill="url(#bg)"/>
+  <circle cx="1180" cy="90" r="220" fill="#2563eb" opacity="0.06"/>
+  <circle cx="150" cy="650" r="260" fill="#7c3aed" opacity="0.05"/>
+
+  <text x="700" y="72" text-anchor="middle" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700">Cyber-Sentinel</text>
+  <text x="700" y="108" text-anchor="middle" fill="#94a3b8" font-family="Segoe UI, Arial, sans-serif" font-size="17">Evidence-driven cyber defense, separated by contract — connected by evidence</text>
+
+  <g>
+    <rect x="90" y="190" width="360" height="300" rx="26" fill="#0f172a" stroke="#2563eb" stroke-width="2"/>
+    <rect x="90" y="190" width="360" height="8" rx="4" fill="url(#atlas)"/>
+    <circle cx="270" cy="278" r="48" fill="#0b1f3a" stroke="#38bdf8" stroke-width="2"/>
+    <circle cx="270" cy="278" r="27" fill="#2563eb" opacity="0.28"/>
+    <circle cx="270" cy="278" r="10" fill="#7dd3fc"/>
+    <text x="270" y="355" text-anchor="middle" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">ATLAS</text>
+    <text x="270" y="385" text-anchor="middle" fill="#60a5fa" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">KNOW</text>
+    <text x="270" y="420" text-anchor="middle" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="15">Search • Investigate • Explain</text>
+    <text x="270" y="447" text-anchor="middle" fill="#94a3b8" font-family="Segoe UI, Arial, sans-serif" font-size="14">Canonical knowledge + provenance</text>
+  </g>
+
+  <g>
+    <rect x="520" y="190" width="360" height="300" rx="26" fill="#0f172a" stroke="#ef4444" stroke-width="2"/>
+    <rect x="520" y="190" width="360" height="8" rx="4" fill="url(#defend)"/>
+    <path d="M700 235 L748 255 L739 314 C734 347 715 369 700 378 C685 369 666 347 661 314 L652 255 Z" fill="#32131b" stroke="#fb7185" stroke-width="2"/>
+    <path d="M680 305 L695 320 L722 286" fill="none" stroke="#fecdd3" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="700" y="405" text-anchor="middle" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">DefenseOps</text>
+    <text x="700" y="435" text-anchor="middle" fill="#fb7185" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">DEFEND</text>
+    <text x="700" y="466" text-anchor="middle" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="15">Detect • Hunt • Validate • Respond</text>
+  </g>
+
+  <g>
+    <rect x="950" y="190" width="360" height="300" rx="26" fill="#0f172a" stroke="#8b5cf6" stroke-width="2"/>
+    <rect x="950" y="190" width="360" height="8" rx="4" fill="url(#skills)"/>
+    <rect x="1082" y="238" width="96" height="104" rx="16" fill="#21123d" stroke="#c084fc" stroke-width="2"/>
+    <path d="M1105 270 H1155 M1105 292 H1155 M1105 314 H1142" stroke="#e9d5ff" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="1097" cy="270" r="4" fill="#c084fc"/><circle cx="1097" cy="292" r="4" fill="#c084fc"/><circle cx="1097" cy="314" r="4" fill="#c084fc"/>
+    <text x="1130" y="405" text-anchor="middle" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Skills</text>
+    <text x="1130" y="435" text-anchor="middle" fill="#c084fc" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">APPLY</text>
+    <text x="1130" y="466" text-anchor="middle" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="15">Execute • Review • Reuse • Govern</text>
+  </g>
+
+  <path d="M450 340 H510" stroke="#5eead4" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M880 340 H940" stroke="#5eead4" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M1130 510 C1130 610 270 610 270 510" fill="none" stroke="#5eead4" stroke-width="3" stroke-dasharray="10 10" marker-end="url(#arrow)"/>
+  <text x="700" y="585" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">VALIDATE • AUTOMATE • LEARN • EVOLVE</text>
+  <text x="700" y="625" text-anchor="middle" fill="#94a3b8" font-family="Segoe UI, Arial, sans-serif" font-size="14">Operational evidence feeds back into knowledge, defensive engineering, and governed procedures.</text>
+
+  <rect x="370" y="662" width="660" height="34" rx="17" fill="#0b1324" stroke="#1e293b"/>
+  <text x="700" y="684" text-anchor="middle" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="13">Evidence • Provenance • Explicit Boundaries • Human Review • Fail-Closed Release</text>
+</svg>
