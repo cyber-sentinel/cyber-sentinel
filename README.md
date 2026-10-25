@@ -16,6 +16,7 @@
   <a href="https://github.com/cyber-sentinel/Cyber-Sentinel-Atlas"><img alt="ATLAS — KNOW" src="https://img.shields.io/badge/ATLAS-KNOW-2563eb"></a>
   <a href="https://github.com/cyber-sentinel/Cyber-Sentinel-DefenseOps"><img alt="DefenseOps — DEFEND" src="https://img.shields.io/badge/DefenseOps-DEFEND-dc2626"></a>
   <a href="https://github.com/cyber-sentinel/Cyber-Sentinel-Skills"><img alt="Skills — APPLY" src="https://img.shields.io/badge/Skills-APPLY-7c3aed"></a>
+  <a href="https://github.com/cyber-sentinel/Cyber-Sentinel-AION"><img alt="AION — INTERACT" src="https://img.shields.io/badge/AION-INTERACT-0f766e"></a>
   <img alt="Provenance First" src="https://img.shields.io/badge/engineering-provenance--first-0f766e">
   <img alt="Offline Aware" src="https://img.shields.io/badge/architecture-offline--aware-334155">
 </p>
@@ -31,10 +32,24 @@ Cyber-Sentinel is a contract-separated cyber-defense ecosystem for turning **tru
 | [**ATLAS**](https://github.com/cyber-sentinel/Cyber-Sentinel-Atlas) | **KNOW** | What do we know about what we are seeing — and what evidence supports it? | Engineering-ready Windows First Preview; MVP-2 candidate validated; Public Preview still gated |
 | [**DefenseOps**](https://github.com/cyber-sentinel/Cyber-Sentinel-DefenseOps) | **DEFEND** | What can we detect, hunt, validate, and defend — and what evidence supports that claim? | Stable engineering baseline `0.1.0`; no published GitHub Release/tag |
 | [**Skills**](https://github.com/cyber-sentinel/Cyber-Sentinel-Skills) | **APPLY** | How should a security task be performed consistently, safely, and verifiably? | Foundation v0.1 under controlled review; official release not authorized |
+| [**AION**](https://github.com/cyber-sentinel/Cyber-Sentinel-AION) | **INTERACT** | How should grounded cybersecurity context be presented and accessed through visual, voice, and bilingual interaction? | Visual/voice engineering in a stacked Draft PR series; native runtime and Product Acceptance pending |
 
 <p align="center">
   <img src="./assets/ecosystem-overview.svg" alt="Cyber-Sentinel ecosystem: ATLAS KNOW, DefenseOps DEFEND, Skills APPLY, with validation and feedback" width="100%" />
 </p>
+
+## Engineering Status Snapshot — 2026-10-25
+
+This is a **dated GitHub engineering snapshot**, not a live process monitor or a release announcement. Product repositories and approved Product Owner evidence remain authoritative; in-progress local Codex activity cannot be inferred from Git commits alone.
+
+| Product | Latest reviewed engineering evidence | Next acceptance boundary |
+| --- | --- | --- |
+| **ATLAS** | [MVP-2 remediation Draft PR #231](https://github.com/cyber-sentinel/Cyber-Sentinel-Atlas/pull/231), head `d4a1c45ac46c`; [Foundation Hygiene #40185293219](https://github.com/cyber-sentinel/Cyber-Sentinel-Atlas/actions/runs/40185293219) succeeded on that revision | Exact-candidate Windows UX, offline/pack, localization and Product Owner review remain distinct from CI; no public release |
+| **DefenseOps** | `main` retains the `0.1.0` engineering baseline; [Draft PR #13](https://github.com/cyber-sentinel/Cyber-Sentinel-DefenseOps/pull/13) proposes `AGENTS.md` and has successful [Repository Hygiene #39992078480](https://github.com/cyber-sentinel/Cyber-Sentinel-DefenseOps/actions/runs/39992078480) | Final governance review, merge authorization, platform-specific deployment validation; no release |
+| **Skills** | [Foundation Draft PR #1](https://github.com/cyber-sentinel/Cyber-Sentinel-Skills/pull/1) adds five offline built-in Skills; [exact-head Foundation #40067596169](https://github.com/cyber-sentinel/Cyber-Sentinel-Skills/actions/runs/40067596169) passed four Linux/Windows matrix jobs | Branch-protection GOV-001 verified in PR evidence; README merge conflict, final review and owner merge/release authorization still open |
+| **AION** | [Synthetic bilingual ASR diagnostic Draft PR #29](https://github.com/cyber-sentinel/Cyber-Sentinel-AION/pull/29) at `595150e04b05`; latest exact-head [AION Foundation #39607007924](https://github.com/cyber-sentinel/Cyber-Sentinel-AION/actions/runs/39607007924) failed before visible steps | Confirm CI root cause and approved runner/budget, real offline voice/runtime evidence, license clearance and Product Acceptance |
+
+Successful synthetic tests or public visibility **do not** certify Production, authorize release, or transfer Product Owner approval between build candidates.
 
 ## ATLAS — KNOW
 
@@ -90,6 +105,14 @@ Skills converts analyst know-how into bounded operational contracts. A substanti
 
 The active Foundation v0.1 workstream is under controlled review and is intentionally separated from release authority. Human accountability, environment-specific authorization, and evidence requirements remain mandatory even when a procedure is machine-readable or AI-assisted.
 
+## AION — INTERACT
+
+**Grounded Visual and Bilingual Voice Interaction**
+
+[AION](https://github.com/cyber-sentinel/Cyber-Sentinel-AION) owns the versioned Entity/visual-state experience, bounded Persian/English interaction contracts, accessibility fallbacks, and product-adapter boundary. It is a **supporting interaction layer, not a second authoritative cybersecurity knowledge engine**. ATLAS remains authoritative for its source-backed security facts, search and investigation content.
+
+Current Visual, Session, Adapter and offline Voice/ASR/TTS work is managed in stacked Draft PRs. Synthetic quality diagnostics and framework tests are engineering evidence; hardware-native operation, redistribution, Product Owner acceptance and release remain separately gated. The ATLAS integration target is **one application window and one end-user executable**, not an extra AION installer.
+
 ## Engineering Principles
 
 1. **No material technical claim without provenance.**
@@ -110,6 +133,7 @@ The active Foundation v0.1 workstream is under controlled review and is intentio
 | ATLAS → DefenseOps | Evidence-backed knowledge and context may inform defensive engineering; origin alone never grants production authority |
 | DefenseOps → Skills | Validated engineering artifacts may become repeatable procedures; Skills does not redefine detection ownership |
 | Skills → ATLAS | Operational outcomes and lessons may become governed knowledge only through ATLAS provenance and validation boundaries |
+| AION ↔ Product Core | Versioned, bounded product adapters communicate grounded results and state; AION never becomes the source of cybersecurity truth |
 | All products | Versioning, attribution, authorization, review, and release authority remain explicit |
 
 ## Primary Security Domains
@@ -140,6 +164,7 @@ Public source visibility, passing CI, or an engineering preview is **not** repre
 - **KNOW** — [Cyber-Sentinel-Atlas](https://github.com/cyber-sentinel/Cyber-Sentinel-Atlas)
 - **DEFEND** — [Cyber-Sentinel-DefenseOps](https://github.com/cyber-sentinel/Cyber-Sentinel-DefenseOps)
 - **APPLY** — [Cyber-Sentinel-Skills](https://github.com/cyber-sentinel/Cyber-Sentinel-Skills)
+- **INTERACT** — [Cyber-Sentinel-AION](https://github.com/cyber-sentinel/Cyber-Sentinel-AION)
 
 ---
 
